@@ -12,17 +12,27 @@ namespace PetesPortfolio.Controllers
         {
             return View();
         }
-
-        public ActionResult About()
+        public ActionResult team()
         {
-            ViewBag.Message = "Your application description page.";
+            return View();
+        }
+        public ActionResult Portfolio()
+        {
+            return View();
+        }
+        public ActionResult about()
+        {
+            return View();
+        }
+
+        public ActionResult resume()
+        {
 
             return View();
         }
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
 
             return View();
         }

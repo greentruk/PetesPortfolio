@@ -1,4 +1,7 @@
-﻿<!DOCTYPE html>
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -9,14 +12,19 @@
     <title>Agency - Start Bootstrap Theme</title>
     <!-- Bootstrap Core CSS -->
     <link href="~/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!--SyntaxHighlighter-->
+    <link href="~/vendor/SyntaxHighlighter/styles/shCore.css" rel="stylesheet" />
+    <link href="~/vendor/SyntaxHighlighter/styles/shThemeDefault.css" rel="stylesheet" />
     <!-- Custom Fonts -->
     <link href="~/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
     <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
-    <!-- Theme CSS -->
-    <link href="~/css//agency.min.css" rel="stylesheet">
+    <!-- custom CSS -->
+    <link href="~/css/custom.css" rel="stylesheet" />  
+     <!-- Theme CSS -->
+    <link href="~/css/agency.min.css" rel="stylesheet">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -33,7 +41,7 @@
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand page-scroll" href="#page-top">Start Bootstrap</a>
+                <a class="navbar-brand page-scroll" href="#">Pete Harvey</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -42,16 +50,16 @@
                         <a href="#page-top"></a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#services">Services</a>
+                        <a class="page-scroll" href="#about">About</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="#portfolio">Portfolio</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#about">About</a>
+                        <a class="page-scroll" href="#resume">Resume</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#team">Team</a>
+                        <a class="page-scroll" href="#blog">Blog</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="#contact">Contact</a>
@@ -63,25 +71,24 @@
         <!-- /.container-fluid -->
     </nav>
     <!-- Header -->
-    <header>
+    <header id="header_background">
         <div class="container">
             <div class="intro-text">
-                <div class="intro-lead-in">Welcome To Our Studio!</div>
-                <div class="intro-heading">It's Nice To Meet You</div>
-                <a href="#services" class="page-scroll btn btn-xl">Tell Me More</a>
-            </div>
+                <div id="harvey">Pete Harvey</div>
+                <div class="intro-lead-in">Web Developer</div>
+             </div>
         </div>
     </header>
-    <!-- Services Section -->
-    <section id="services">
+    <!--ABOUT Section-->
+    <section id="about">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Services</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                    <h2 class="section-heading">About Pete</h2>
+                    <h3 class="section-subheading text-muted">I have spent the last fifteen years working in the financial services sector in an analysic role.  I've worked for large international banks, small regional banks and private financial firms.  I have decided to pursue a new carreer in the field of web development.</h3>
                 </div>
             </div>
-            <div class="row text-center">
+            @*<div class="row text-center">
                 <div class="col-md-4">
                     <span class="fa-stack fa-4x">
                         <i class="fa fa-circle fa-stack-2x text-primary"></i>
@@ -105,32 +112,36 @@
                     </span>
                     <h4 class="service-heading">Web Security</h4>
                     <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
-                </div>
+                </div>*@
             </div>
-        </div>
+        
     </section>
     <!-- Portfolio Grid Section -->
     <section id="portfolio" class="bg-light-gray">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Portfolio</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                    <h2 class="section-heading">Pete's Project Portfolio</h2>
+              <br>
+                    <br>
+                    <br>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
+                    <a href="" class="portfolio-link" data-toggle="modal" data-target="#petesCode">
                         <div class="portfolio-hover">
                             <div class="portfolio-hover-content">
                                 <i class="fa fa-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="~/img/portfolio/roundicons.png" class="img-responsive" alt="">
+                        <img src="~/img/about/javascript-logo2.png" class="img-responsive" alt="">
+                        @*<img src="~/img/about/javascript-logo-1.png" class="img-responsive" alt="">*@
+                        @*<img src="~/img/portfolio/roundicons.png" class="img-responsive" alt="">*@
                     </a>
                     <div class="portfolio-caption">
-                        <h4>Round Icons</h4>
-                        <p class="text-muted">Graphic Design</p>
+                        <h4>JavaScript Exercises</h4>
+                        <p class="text-muted">Week One</p>
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-6 portfolio-item">
@@ -206,13 +217,14 @@
             </div>
         </div>
     </section>
-    <!-- About Section -->
-    <section id="about">
+
+    <!-- RESUME SECTION -->
+    <section id="resume">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">About</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                    <h2 class="section-heading">Resume</h2>
+                    <br />
                 </div>
             </div>
             <div class="row">
@@ -220,66 +232,78 @@
                     <ul class="timeline">
                         <li>
                             <div class="timeline-image">
-                                <img class="img-circle img-responsive" src="~/img/about/1.jpg" alt="">
+                                <img class="img-circle img-responsive" src="~/img/pslogo.png" />
                             </div>
                             <div class="timeline-panel">
                                 <div class="timeline-heading">
-                                    <h4>2009-2011</h4>
-                                    <h4 class="subheading">Our Humble Beginnings</h4>
+                                    <h4>Park Sterling Bank ~ Charlotte, NC</h4>
+                                    <h4>January 2014 - June 2016</h4>
+                                    <h4 class="subheading">Loan Portfolio Analyst</h4>
                                 </div>
                                 <div class="timeline-body">
-                                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
+                                    <p class="text-muted">• Develop monthly risk management reporting material used by the Director of Builder Finance to measure performance with respect to soundness, profitability and growth.</p>
+                                    <p class="text-muted">• Create Quarterly Builder Finance Group (BFG) reporting material presented to Senior Management personnel.</p>
+                                    <p class="text-muted">• Oversee Builder Finance line usage and compliance with approved terms.</p>
+                                    <p class="text-muted">• Monitor all loan performance for meeting development deadlines and minimum payment activity.</p>
                                 </div>
                             </div>
                         </li>
                         <li class="timeline-inverted">
                             <div class="timeline-image">
-                                <img class="img-circle img-responsive" src="~/img/about/2.jpg" alt="">
+                                <img class="img-circle img-responsive" src="~/img/wflogo.jpg" />
                             </div>
                             <div class="timeline-panel">
                                 <div class="timeline-heading">
-                                    <h4>March 2011</h4>
-                                    <h4 class="subheading">An Agency is Born</h4>
+                                    <h4>Wells Fargo - Charlotte, NC</h4>
+                                    <h4>February 2013 - January 2014</h4>
+                                    <h4 class="subheading">Loan Underwriter III</h4>
                                 </div>
                                 <div class="timeline-body">
-                                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
+                                    <p class="text-muted">• Act as point of contact for non-decision making partners to gather information, make appropriate lending decisions and explain rationale behind credit decision.</p>
+                                    <p class="text-muted">• Responsible for reviewing, analyzing, approving and underwriting large, unusual or complex individual consumer requests and products within company and industry guidelines.</p>
+                                    <p class="text-muted">• Underwriting functions may include reviewing financial statements, credit reports, tax returns, income statements, cash-flow, collateral appraisal and applicable ratios (i.e. Debt ratios, loan-to-value).</p>
                                 </div>
                             </div>
                         </li>
                         <li>
                             <div class="timeline-image">
-                                <img class="img-circle img-responsive" src="~/img/about/3.jpg" alt="">
+                                <img class="img-circle img-responsive" src='~/img/btlogo.png'>
                             </div>
                             <div class="timeline-panel">
                                 <div class="timeline-heading">
-                                    <h4>December 2012</h4>
-                                    <h4 class="subheading">Transition to Full Service</h4>
+                                    <h4>BlueTarp Financial, Inc. - Charlotte, NC & Portland, ME</h4>
+                                    <h4>November 2009 - February 2013</h4>
+                                    <h4 class="subheading">Senior Commercial Credit Analyst II</h4>
                                 </div>
                                 <div class="timeline-body">
-                                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
+                                    <p class="text-muted">• Underwrite new credit applications and existing customer accounts to determine credit worthiness, appropriate credit line, and payment terms based on internal credit underwriting policies and government standards.</p>
+                                    <p class="text-muted">• Gather and assess relevant information about customer’s business and credit history, including consumer and commercial credit reports, bank and vendor references, financial statements, tax returns, statements of cash-flow and balance sheets.</p>
+                                    <p class="text-muted">• Complete thorough write-up analysis of larger more complex credit extensions.</p>
                                 </div>
                             </div>
                         </li>
                         <li class="timeline-inverted">
                             <div class="timeline-image">
-                                <img class="img-circle img-responsive" src="~/img/about/4.jpg" alt="">
+                                <img class="img-circle img-responsive" src='~/img/boalogo.png'>
                             </div>
                             <div class="timeline-panel">
                                 <div class="timeline-heading">
-                                    <h4>July 2014</h4>
-                                    <h4 class="subheading">Phase Two Expansion</h4>
+                                    <h4>Bank of America - Belfast, ME</h4>
+                                    <h4>February 1999 - November 2009</h4>
+                                    <h4 class="subheading">Senior Credit Analyst II</h4>
                                 </div>
                                 <div class="timeline-body">
-                                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
+                                    <p class="text-muted">• Underwrite consumer loans based on escalated requests and strategy generated risk detection reviews; evaluated credit bureaus, account history, and customer provided information to reach determination regarding customer relationship with the bank; proactively contacted customers regarding financial stability commitments and to assess potential account risks; provided credit solutions and counseling to customers experiencing financial hardship.</p>
+                                    <p class="text-muted">• Underwrite credit card applications, credit reports, tax documents and bank references to determine or adjust customer credit lines; determined applicant’s credit worthiness based on ability and willingness to repay; generated revenue through transfer transactions and additional bank product sales.</p>
                                 </div>
                             </div>
                         </li>
                         <li class="timeline-inverted">
                             <div class="timeline-image">
                                 <h4>
-                                    Be Part
-                                    <br>Of Our
-                                    <br>Story!
+                                    
+                                    <br>
+                                    <br>
                                 </h4>
                             </div>
                         </li>
@@ -288,112 +312,32 @@
             </div>
         </div>
     </section>
-    <!-- Team Section -->
-    <section id="team" class="bg-light-gray">
+    <!-- BLOG SECTION -->
+    <section id="blog" class="bg-light-gray">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Our Amazing Team</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                    <h2 class="section-heading">Pleace Holder for Pete's Blog</h2>
+                    <h3 class="section-subheading text-muted">Come Back Soon.</h3>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-sm-4">
-                    <div class="team-member">
-                        <img src="~/img/team/1.jpg" class="img-responsive img-circle" alt="">
-                        <h4>Kay Garland</h4>
-                        <p class="text-muted">Lead Designer</p>
-                        <ul class="list-inline social-buttons">
-                            <li>
-                                <a href="#"><i class="fa fa-twitter"></i></a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fa fa-facebook"></i></a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fa fa-linkedin"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="team-member">
-                        <img src="~/img/team/2.jpg" class="img-responsive img-circle" alt="">
-                        <h4>Larry Parker</h4>
-                        <p class="text-muted">Lead Marketer</p>
-                        <ul class="list-inline social-buttons">
-                            <li>
-                                <a href="#"><i class="fa fa-twitter"></i></a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fa fa-facebook"></i></a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fa fa-linkedin"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="team-member">
-                        <img src="~/img/team/3.jpg" class="img-responsive img-circle" alt="">
-                        <h4>Diana Pertersen</h4>
-                        <p class="text-muted">Lead Developer</p>
-                        <ul class="list-inline social-buttons">
-                            <li>
-                                <a href="#"><i class="fa fa-twitter"></i></a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fa fa-facebook"></i></a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fa fa-linkedin"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+          
             </div>
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <p class="large text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.</p>
+                    <p class="large text-muted"></p>
                 </div>
             </div>
-        </div>
+        
     </section>
-    <!-- Clients Aside -->
-    <aside class="clients">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-3 col-sm-6">
-                    <a href="#">
-                        <img src="~/img/logos/envato.jpg" class="img-responsive img-centered" alt="">
-                    </a>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <a href="#">
-                        <img src="~/img/logos/designmodo.jpg" class="img-responsive img-centered" alt="">
-                    </a>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <a href="#">
-                        <img src="~/img/logos/themeforest.jpg" class="img-responsive img-centered" alt="">
-                    </a>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <a href="#">
-                        <img src="~/img/logos/creative-market.jpg" class="img-responsive img-centered" alt="">
-                    </a>
-                </div>
-            </div>
-        </div>
-    </aside>
+   
     <!-- Contact Section -->
     <section id="contact">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Contact Us</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                    <h2 class="section-heading">Contact Pete</h2>
+                    <h3 class="section-subheading text-muted"></h3>
                 </div>
             </div>
             <div class="row">
@@ -466,7 +410,7 @@
     <!-- Portfolio Modals -->
     <!-- Use the modals below to showcase details about your portfolio projects! -->
     <!-- Portfolio Modal 1 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
+    @*<div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-content">
             <div class="close-modal" data-dismiss="modal">
                 <div class="lr">
@@ -477,27 +421,214 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-8 col-lg-offset-2">
-                        <div class="modal-body">
+                        <div class="modal-body">*@
                             <!-- Project Details Go Here -->
-                            <h2>Project Name</h2>
+                            @*<h2>Project Name</h2>
                             <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
                             <img class="img-responsive img-centered" src="~/img/portfolio/roundicons-free.png" alt="">
                             <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
                             <p>
                                 <strong>Want these icons in this portfolio item sample?</strong>You can download 60 of them for free, courtesy of <a href="https://getdpd.com/cart/hoplink/18076?referrer=bvbo4kax5k8ogc">RoundIcons.com</a>, or you can purchase the 1500 icon set <a href="https://getdpd.com/cart/hoplink/18076?referrer=bvbo4kax5k8ogc">here</a>.
                             </p>
-                            <ul class="list-inline">
-                                <li>Date: July 2014</li>
-                                <li>Client: Round Icons</li>
-                                <li>Category: Graphic Design</li>
-                            </ul>
+                            
                             <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </div>*@
+    <div class="modal fade" id="petesCode" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 class="modal-title">Pete's Code</h4>
+                </div>
+                <div class="modal-body">
+                    <div>
+                            <h3>Please enter five numbers below.</h3>
+                            <form>
+                                First Number: <br>
+                                <input id="first" type="number" name="first"><br>
+                                Second Number: <br>
+                                <input id="second" type="number" name="second"><br>
+                                Third Number: <br>
+                                <input id="third" type="number" name="third"><br>
+                                Fourth Number: <br>
+                                <input id="fourth" type="number" name="fourth"><br>
+                                Fifth Number: <br>
+                                <input id="fifth" type="number" name="fifth"><br>
+                                <button type="button" onclick="minFunction(); maxFunction(); avgFunction(); sumFunction(); productFunction();">Click me</button>
+                            </form>
+                            <br>
+                            <br>
+                            <div><p id="minOutput"></p></div>
+                            <div><p id="maxOutput"></p></div>
+                            <div><p id="avgOutput"></p></div>
+                            <div><p id="sumOutput"></p></div>
+                            <div><p id="productOutput"></p></div>
+
+
+                            <!-- exercise 2 -->
+
+                            <div>
+                                <form>
+                                    <h3>Please enter a positive number: </h3><br>
+                                    <input id="userInput" type="number" name="">
+                                    <button type="button" id="mybutton">Click here to calculate Factorial </button>
+                                </form>
+                                <br>
+                            </div>
+                            <div>
+                                <h4>The FACTORIAL of the above number is <span id="factorialOutput"></span></h4>
+                                <p id="factorialOutput"></p>
+                            </div>
+                            <br>
+
+                            <!-- // ***  EXCERCISE 3  *** -->
+
+                            <div>
+                                <form>
+                                    <h4><b>FIZZ-BUZZ</b></h4>
+                                    <h3>Please enter two numbers, each between 1 and 100.</h3>
+                                    <label for="fbInput1">First Number:</label>
+                                    <input id="fbInput1" type="number" name="">
+                                    <br />
+                                    <label for="fbInput2">Second Number:</label>
+                                    <input id="fbInput2" type="number" name="">
+                                    <button type="button" id="fbbutton">Run Fizz-Buzz</button>
+                                </form>
+                                <div><p id="fbResult"></p></div>
+                            </div>
+                            <br>
+                            <br>
+
+
+                            <!-- // ***  EXCERCISE 4 PALINDROME *** -->
+                            <div>
+                                <form>
+                                    <h4><b>Palindrome Excercise</b></h4>
+                                    <label>Enter Word: </label>
+                                    <input type="text" id="palInput">
+                                    <button type="button" onclick="runPalindrome($('#palInput').val())">Click Me</button>
+                                    <br>
+                                    <label>The reverse value is: </label>
+                                    <input type="text" id="outputOne" readonly="true">
+                                    <br />
+                                    <label>Is a palindrome? : </label>
+                                    <input type="text" id="outputTwo" readonly="true">
+                                </form>
+                            </div>
+
+                            <!--SyntaxHighlighter Below-->
+<pre class="brush:js;">
+  Exercise #1 
+                                
+function minFunction() {
+	var firstNum = document.getElementById("first").value;
+	var secondNum = document.getElementById("second").value;
+	var thirdNum = document.getElementById("third").value;
+    var fourthNum = document.getElementById("fourth").value;
+    var fifthNum = document.getElementById("fifth").value;
+   minOutput.textContent ="The SMALLEST number is " + Math.min(firstNum, secondNum, thirdNum, fourthNum, fifthNum);
+}
+function maxFunction() {
+	var firstNum = document.getElementById("first").value;
+	var secondNum = document.getElementById("second").value;
+	var thirdNum = document.getElementById("third").value;
+    var fourthNum = document.getElementById("fourth").value;
+    var fifthNum = document.getElementById("fifth").value;
+   maxOutput.textContent ="The LARGEST number is " + Math.max(firstNum, secondNum, thirdNum, fourthNum, fifthNum);
+   
+}
+function avgFunction() {
+	var firstNum = document.getElementById("first").value;
+	var secondNum = document.getElementById("second").value;
+	var thirdNum = document.getElementById("third").value;
+    var fourthNum = document.getElementById("fourth").value;
+    var fifthNum = document.getElementById("fifth").value;
+    var resultMean = parseInt(firstNum) + parseInt(secondNum) + parseInt(thirdNum) + parseInt(fourthNum) + parseInt(fifthNum)/parseInt(5);
+   avgOutput.textContent ="The MEAN of the five numbers is " + resultMean;
+   
+}
+function sumFunction() {
+	var firstNum = document.getElementById("first").value;
+	var secondNum = document.getElementById("second").value;
+	var thirdNum = document.getElementById("third").value;
+    var fourthNum = document.getElementById("fourth").value;
+    var fifthNum = document.getElementById("fifth").value;
+    var resultSum = parseInt(firstNum) + parseInt(secondNum) + parseInt(thirdNum) + parseInt(fourthNum) + parseInt(fifthNum);
+   sumOutput.textContent ="The SUM of the five numbers is " + resultSum;
+   
+}
+function productFunction() {
+	var firstNum = document.getElementById("first").value;
+	var secondNum = document.getElementById("second").value;
+	var thirdNum = document.getElementById("third").value;
+    var fourthNum = document.getElementById("fourth").value;
+    var fifthNum = document.getElementById("fifth").value;
+    var resultProd = firstNum * secondNum * thirdNum * fourthNum * fifthNum;
+   productOutput.textContent ="The PRODUCT of the five numbers is " + resultProd;
+   
+}
+    Exercise #2
+$("#mybutton").click(function(event) {
+  event.preventDefault();
+var userInput =parseInt($("#userInput").val());
+for (var i = userInput-1; i > 0; i--) {
+    userInput = userInput * i;
+    }
+    console.log(userInput)
+     $("#factorialOutput").append(userInput);
+});	
+  
+Exercise #3 -  FIZZ BUZZ
+$("#fbbutton").click(function(event) {
+  event.preventDefault();
+var fbInputOne =document.getElementById("fbInput1").value;
+var fbInputTwo =document.getElementById("fbInput2").value;
+var fbOutput ="";
+    for (var i = 1; i <= 100; i++) {
+        if ((i % fbInputOne === 0) && (i % fbInputTwo == 0)) {
+            fbOutput = fbOutput + "FizzBuzz";
+        }
+        else if (i % fbInputOne == 0) {
+            fbOutput = fbOutput + "Fizz";
+        }
+        else if (i % fbInputTwo == 0) {
+            fbOutput = fbOutput + "Buzz";
+        }
+        else {
+            fbOutput = fbOutput + i;
+        }
+    }
+fbResult.textContent = "The result is" + fbOutput;
+});
+    Exercise #4 -  PALINDROME
+var palInput =($("palInput").val());
+function runPalindrome(word) {
+            $("#outputOne").val(word.split("").reverse().join(""));
+            if ($("#outputOne").val() == word)
+            {
+                $("#outputTwo").val("Yes");
+            }
+            else
+            {
+                $("#outputTwo").val("No");            
+            }
+        };
+</pre>
+
+                </div>
+            </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
     <!-- Portfolio Modal 2 -->
     <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-content">
@@ -631,6 +762,10 @@
     <script src="~/vendor/jquery/jquery.min.js"></script>
     <!-- Bootstrap Core JavaScript -->
     <script src="~/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <!-- SyntaxHighlighter -->
+    <script src="~/vendor/SyntaxHighlighter/scripts/shCore.js"></script>
+    <script src="~/vendor/SyntaxHighlighter/scripts/shBrushJScript.js"></script>
+    <script>SyntaxHighlighter.all();</script>
     <!-- Plugin JavaScript -->
     <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
     <!-- Contact Form JavaScript -->
@@ -638,5 +773,7 @@
     <script src="~/js/contact_me.js"></script>
     <!-- Theme JavaScript -->
     <script src="~/js/agency.min.js"></script>
+    <!-- JavaScript exercises -->
+    <script src="~/js/fivenumbers.js"></script>
 </body>
 </html>
