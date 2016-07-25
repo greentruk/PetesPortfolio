@@ -1,10 +1,11 @@
-﻿@model PetesBlog.Models.codeFirst.BlogPost
+﻿@model PetesPortfolio.Models.codeFirst.BlogPost
 
 @{
     ViewBag.Title = "Details";
 }
 
 <h2>Details</h2>
+@Html.Raw(Model.Body)
 
 <div>
     <h4>BlogPost</h4>

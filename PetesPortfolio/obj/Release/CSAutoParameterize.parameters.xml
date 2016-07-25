@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <parameters>
-  <parameter name="DefaultConnection-Web.config Connection String" description="DefaultConnection Connection String used in web.config by the application to access the database." defaultValue="Data Source=(LocalDb)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\aspnet-PetesPortfolio-20160712103912.mdf;Initial Catalog=aspnet-PetesPortfolio-20160712103912;Integrated Security=True" tags="SqlConnectionString">
+  <parameter name="DefaultConnection-Web.config Connection String" description="DefaultConnection Connection String used in web.config by the application to access the database." defaultValue="Data Source=coderfoundry.cloudapp.net,55555;Initial Catalog=pharvey-portfolio;User ID=pharvey;Password=Banana@207" tags="SqlConnectionString">
     <parameterEntry kind="XmlFile" scope="\\\\mac\\home\\documents\\visual\ studio\ 2015\\Projects\\PetesPortfolio\\PetesPortfolio\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
   </parameter>
 </parameters>

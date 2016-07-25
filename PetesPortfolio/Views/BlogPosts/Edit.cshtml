@@ -1,10 +1,11 @@
-﻿@model PetesBlog.Models.codeFirst.BlogPost
+﻿@model PetesPortfolio.Models.codeFirst.BlogPost
 
 @{
     ViewBag.Title = "Edit";
 }
 
 <h2>Edit</h2>
+@Html.Raw(Model.Body)
 
 @using (Html.BeginForm())
 {
@@ -51,7 +52,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Body, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Body, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.Body, new { htmlAttributes = new { @class = "form-control", id = "editor1" } })
                 @Html.ValidationMessageFor(model => model.Body, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -85,3 +86,10 @@
 <div>
     @Html.ActionLink("Back to List", "Index")
 </div>
+@section scripts{
+    <script src="~/vendor/CK_Editor/ckeditor.js"></script>
+
+    <script>
+        CKEDITOR.replace('editor1');
+    </script>
+}
