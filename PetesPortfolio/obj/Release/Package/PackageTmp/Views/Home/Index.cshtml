@@ -447,133 +447,125 @@
                 </div>
                 <div class="modal-body">
                     <div>
-                            <h3>Please enter five numbers below.</h3>
-                            <form>
-                                First Number: <br>
-                                <input id="first" type="number" name="first"><br>
-                                Second Number: <br>
-                                <input id="second" type="number" name="second"><br>
-                                Third Number: <br>
-                                <input id="third" type="number" name="third"><br>
-                                Fourth Number: <br>
-                                <input id="fourth" type="number" name="fourth"><br>
-                                Fifth Number: <br>
-                                <input id="fifth" type="number" name="fifth"><br>
-                                <button type="button" onclick="minFunction(); maxFunction(); avgFunction(); sumFunction(); productFunction();">Click me</button>
-                            </form>
-                            <br>
-                            <br>
-                            <div><p id="minOutput"></p></div>
-                            <div><p id="maxOutput"></p></div>
-                            <div><p id="avgOutput"></p></div>
-                            <div><p id="sumOutput"></p></div>
-                            <div><p id="productOutput"></p></div>
+                        <h3>Please enter five numbers below.</h3>
+                        <form>
+                            First Number: <br>
+                            <input type="number" id="myvalue1"><br>
+                            Second Number: <br>
+                            <input type="number" id="myvalue2"><br>
+                            Third Number: <br>
+                            <input type="number" id="myvalue3"><br>
+                            Fourth Number: <br>
+                            <input type="number" id="myvalue4"><br>
+                            Fifth Number: <br>
+                            <input type="number" id="myvalue5"><br>
+
+                            <button type="button" id="mybutton">Click me</button>
+                        </form>
+                        <br>
+
+                        <div id="output">
+                            <div id="minOutput">The SMALLEST number is </div><br>
+                            <div id="maxOutput">The LARGEST number is </div><br>
+                            <div id="avgOutput">The MEAN of the five numbers is </div><br>
+                            <div id="sumOutput">The SUM of the five numbers is </div><br>
+                            <div id="productOutput">The PRODUCT of the five numbers is </div><br>
+                        </div>
 
 
                             <!-- exercise 2 -->
 
-                            <div>
-                                <form>
-                                    <h3>Please enter a positive number: </h3><br>
-                                    <input id="userInput" type="number" name="">
-                                    <button type="button" id="mybutton">Click here to calculate Factorial </button>
-                                </form>
-                                <br>
-                            </div>
-                            <div>
-                                <h4>The FACTORIAL of the above number is <span id="factorialOutput"></span></h4>
-                                <p id="factorialOutput"></p>
-                            </div>
+                        <div>
+                            <form>
+                                <h3>Please enter a positive number: </h3><br>
+                                <input id="userInput" type="number" name="">
+                                <button type="button" id="userButton">Click here to calculate Factorial </button>
+                            </form>
                             <br>
+                        </div>
+                        <div>
+                            <h4>The FACTORIAL of the above number is <span id="factorialOutput"></span></h4>
+                        </div>
+                        <br>
 
                             <!-- // ***  EXCERCISE 3  *** -->
 
-                            <div>
-                                <form>
-                                    <h4><b>FIZZ-BUZZ</b></h4>
-                                    <h3>Please enter two numbers, each between 1 and 100.</h3>
-                                    <label for="fbInput1">First Number:</label>
-                                    <input id="fbInput1" type="number" name="">
-                                    <br />
-                                    <label for="fbInput2">Second Number:</label>
-                                    <input id="fbInput2" type="number" name="">
-                                    <button type="button" id="fbbutton">Run Fizz-Buzz</button>
-                                </form>
-                                <div><p id="fbResult"></p></div>
-                            </div>
-                            <br>
-                            <br>
+                        <div>
+                            <form>
+                                <h4><b>FIZZ-BUZZ</b></h4>
+                                <h3>Please enter two numbers, each between 1 and 100.</h3>
+                                <label for="fbInput1">First Number:</label>
+                                <input id="fbInput1" type="number" name="">
+                                <label for="fbInput2">Second Number:</label>
+                                <input id="fbInput2" type="number" name="">
+                                <button type="button" id="fbbutton">Run Fizz-Buzz</button>
+                            </form>
+                            <div style="width: 400px"><p id="fbResult"></p></div>
+                        </div>
+                        <br>
+                        <br>
 
 
                             <!-- // ***  EXCERCISE 4 PALINDROME *** -->
-                            <div>
-                                <form>
-                                    <h4><b>Palindrome Excercise</b></h4>
-                                    <label>Enter Word: </label>
-                                    <input type="text" id="palInput">
-                                    <button type="button" onclick="runPalindrome($('#palInput').val())">Click Me</button>
-                                    <br>
-                                    <label>The reverse value is: </label>
-                                    <input type="text" id="outputOne" readonly="true">
-                                    <br />
-                                    <label>Is a palindrome? : </label>
-                                    <input type="text" id="outputTwo" readonly="true">
-                                </form>
-                            </div>
+                        <div>
+                            <form>
+                                <h4><b>Palindrome Excercise</b></h4>
+                                <label>Enter Word: </label>
+                                <input type="text" id="palInput">
+                                <button type="button" onclick="runPalindrome($('#palInput').val())">Click Me</button>
+                                <br>
+                                <label>The reverse value is: </label>
+                                <input type="text" id="outputOne" readonly="true">
+                                <label>Is a palindrome? : </label>
+                                <input type="text" id="outputTwo" readonly="true">
+                            </form>
+                        </div>
 
                             <!--SyntaxHighlighter Below-->
 <pre class="brush:js;">
-  Exercise #1 
+  ** Exercise #1 **
                                 
-function minFunction() {
-	var firstNum = document.getElementById("first").value;
-	var secondNum = document.getElementById("second").value;
-	var thirdNum = document.getElementById("third").value;
-    var fourthNum = document.getElementById("fourth").value;
-    var fifthNum = document.getElementById("fifth").value;
-   minOutput.textContent ="The SMALLEST number is " + Math.min(firstNum, secondNum, thirdNum, fourthNum, fifthNum);
+    $("#mybutton").click(function(event) {
+  event.preventDefault();
+  /* Get input value */
+  var myvalue1 = parseInt($("#myvalue1").val());
+  var myvalue2 = parseInt($("#myvalue2").val());
+  var myvalue3 = parseInt($("#myvalue3").val());
+  var myvalue4 = parseInt($("#myvalue4").val());
+  var myvalue5 = parseInt($("#myvalue5").val());
+ /* Pass value into array */
+  var myArr = [];
+  myArr.push(myvalue1); 
+  myArr.push(myvalue2); 
+  myArr.push(myvalue3); 
+  myArr.push(myvalue4); 
+  myArr.push(myvalue5); 
+console.log(myArr);
+var minOutput =  Math.min.apply(Math, myArr);
+  $("#minOutput").append(minOutput);   
+  console.log(minOutput);
+var maxOutput = Math.max.apply(Math, myArr);
+    $("#maxOutput").append(maxOutput);
+var mean = 0;
+ for(var i=0; i < myArr.length; i++){
+mean = mean + myArr[i];}
+mean = mean/myArr.length;
+ $("#avgOutput").append(mean);
+ var sum = 0;
+ for(var i = 0; i < myArr.length; i++){
+       sum = sum + myArr[i];
 }
-function maxFunction() {
-	var firstNum = document.getElementById("first").value;
-	var secondNum = document.getElementById("second").value;
-	var thirdNum = document.getElementById("third").value;
-    var fourthNum = document.getElementById("fourth").value;
-    var fifthNum = document.getElementById("fifth").value;
-   maxOutput.textContent ="The LARGEST number is " + Math.max(firstNum, secondNum, thirdNum, fourthNum, fifthNum);
-   
+ $("#sumOutput").append(sum);
+ var product = 1;
+for(var i=0; i < myArr.length; i++){
+       product = product * myArr[i];
 }
-function avgFunction() {
-	var firstNum = document.getElementById("first").value;
-	var secondNum = document.getElementById("second").value;
-	var thirdNum = document.getElementById("third").value;
-    var fourthNum = document.getElementById("fourth").value;
-    var fifthNum = document.getElementById("fifth").value;
-    var resultMean = parseInt(firstNum) + parseInt(secondNum) + parseInt(thirdNum) + parseInt(fourthNum) + parseInt(fifthNum)/parseInt(5);
-   avgOutput.textContent ="The MEAN of the five numbers is " + resultMean;
-   
-}
-function sumFunction() {
-	var firstNum = document.getElementById("first").value;
-	var secondNum = document.getElementById("second").value;
-	var thirdNum = document.getElementById("third").value;
-    var fourthNum = document.getElementById("fourth").value;
-    var fifthNum = document.getElementById("fifth").value;
-    var resultSum = parseInt(firstNum) + parseInt(secondNum) + parseInt(thirdNum) + parseInt(fourthNum) + parseInt(fifthNum);
-   sumOutput.textContent ="The SUM of the five numbers is " + resultSum;
-   
-}
-function productFunction() {
-	var firstNum = document.getElementById("first").value;
-	var secondNum = document.getElementById("second").value;
-	var thirdNum = document.getElementById("third").value;
-    var fourthNum = document.getElementById("fourth").value;
-    var fifthNum = document.getElementById("fifth").value;
-    var resultProd = firstNum * secondNum * thirdNum * fourthNum * fifthNum;
-   productOutput.textContent ="The PRODUCT of the five numbers is " + resultProd;
-   
-}
-    Exercise #2
-$("#mybutton").click(function(event) {
+$("#productOutput").append(product);
+})
+})
+
+   ** Exercise #2 **
+    $("#userButton").click(function(event) {
   event.preventDefault();
 var userInput =parseInt($("#userInput").val());
 for (var i = userInput-1; i > 0; i--) {
@@ -581,32 +573,35 @@ for (var i = userInput-1; i > 0; i--) {
     }
     console.log(userInput)
      $("#factorialOutput").append(userInput);
-});	
+});		
   
-Exercise #3 -  FIZZ BUZZ
-$("#fbbutton").click(function(event) {
+  **  Exercise #3 -  FIZZ BUZZ  **
+    $("#fbbutton").click(function(event) {
   event.preventDefault();
 var fbInputOne =document.getElementById("fbInput1").value;
 var fbInputTwo =document.getElementById("fbInput2").value;
 var fbOutput ="";
+fbOutput= $("#fbResult").append("The result is ");
     for (var i = 1; i <= 100; i++) {
         if ((i % fbInputOne === 0) && (i % fbInputTwo == 0)) {
-            fbOutput = fbOutput + "FizzBuzz";
+            fbOutput = $("#fbResult").append('<span style="color: red; font-weight: bold">FizzBuzz</span>');
         }
         else if (i % fbInputOne == 0) {
-            fbOutput = fbOutput + "Fizz";
+            fbOutput = $("#fbResult").append('<span style="color: blue; font-weight: bold">Fizz</span>');
         }
         else if (i % fbInputTwo == 0) {
-            fbOutput = fbOutput + "Buzz";
+            fbOutput = $("#fbResult").append('<span style="color: green; font-weight: bold">Buzz</span>');
         }
         else {
-            fbOutput = fbOutput + i;
+            fbOutput = $("#fbResult").append('<span style="font-weight: bold">', i);
         }
     }
-fbResult.textContent = "The result is" + fbOutput;
 });
-    Exercise #4 -  PALINDROME
-var palInput =($("palInput").val());
+
+    ** Exercise #4 -  PALINDROME  **
+                                                  var palInput =$("#palInput").val().toLowerCase();
+	palInput=palInput.replace(/[^[abc],[0-9]+/g, '');
+    
 function runPalindrome(word) {
             $("#outputOne").val(word.split("").reverse().join(""));
             if ($("#outputOne").val() == word)

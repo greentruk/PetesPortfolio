@@ -6,6 +6,7 @@
 
 <h2>Details</h2>
 
+
 <div>
     <h4>BlogPost</h4>
     <hr />
@@ -47,7 +48,7 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Body)
+            @Html.Raw(Model.Body)
         </dd>
 
         <dt>
