@@ -15,8 +15,10 @@ namespace PetesPortfolio.Controllers
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
+        public object Dateline { get; private set; }
+
         // GET: BlogPosts
-        [Authorize]
+        
         public ActionResult Index()
         {
             
@@ -54,6 +56,7 @@ namespace PetesPortfolio.Controllers
         {
             if (ModelState.IsValid)
             {
+                blogPost.Created = DateTime.Now;
                 db.Posts.Add(blogPost);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -86,6 +89,7 @@ namespace PetesPortfolio.Controllers
         {
             if (ModelState.IsValid)
             {
+                blogPost.Updated = DateTime.Now;
                 db.Entry(blogPost).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
