@@ -10,8 +10,10 @@
     background-image: url('../img/banner1.jpeg');
 }
 
-.nav#mainNav.navbar-default.navbar-custom.navbar-fixed-top {background-color: black}
+/*.nav.navbar-default.navbar-custom.navbar-fixed-top {background-color: black}*/
 
 #custommodal {
     position: initial;
 }
+
+.navbar-custom {background-color: black}
