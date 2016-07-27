@@ -1,5 +1,8 @@
-﻿
-@*<!DOCTYPE html>
+﻿@{
+    Layout= null;
+}
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -7,7 +10,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
+    <link rel="icon" href="favicon.ico">
     <title>Agency - Start Bootstrap Theme</title>
+    <!-- Bootstrap core CSS -->
+    @*<link href="css/bootstrap.min.css" rel="stylesheet">*@
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <!-- Bootstrap Core CSS -->
     <link href="~/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!--SyntaxHighlighter-->
@@ -19,63 +26,78 @@
     <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
-    <!-- custom CSS -->
-    <link href="~/css/custom.css" rel="stylesheet" />  
-     <!-- Theme CSS -->
+    <!-- Custom styles for this template -->
+    <link href="~/Renda_Blog_Template/css/jquery.bxslider.css" rel="stylesheet">
+    <link href="~/Renda_Blog_Template/css/style.css" rel="stylesheet">
+
+    <!-- Theme CSS -->
     <link href="~/css/agency.min.css" rel="stylesheet">
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->*@
+    @*<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        @*[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]*@
+    <!-- custom CSS -->
+    <link href="~/css/custom.css" rel="stylesheet" />
 </head>
-<body id="page-top" class="index">
+<body>
     <!-- Navigation -->
-    @*<nav id="mainNav" class="navbar navbar-default navbar-custom navbar-fixed-top">*@
-        @*div class="container">*@
-        <!-- Brand and toggle get grouped for better mobile display -->
-        @*<div class="navbar-header page-scroll">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
-            </button>
-            <a class="navbar-brand page-scroll" href="#">Pete Harvey</a>
-        </div><*@
+    <nav id="mainNav" class="navbar navbar-default navbar-custom navbar-fixed-top">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand page-scroll" href="#header_background">Pete Harvey</a>
+                @*<a class="navbar-brand page-scroll" href="@Url.Action("index", "home")">Pete Harvey</a>*@
+            </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
-            @*<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li class="hidden">
                         <a href="#page-top"></a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#about">About</a>
-                    </li>
+                            <a class="page-scroll" href="#about">About</a>
+                        </li>
+                    @*<li>
+
+                        Html.ActionLink("About", "index", "home", null, null, "about", null, null)
+                    </li>*@
                     <li>
                         <a class="page-scroll" href="#portfolio">Portfolio</a>
+                        @*@Html.ActionLink("Portfolio", "index", "home", null, null, "portfolio", null, null)*@
+                        @*@Html.ActionLink("Portfolio", "index", "home", null, null, "portfolio", null, htmlAttributes: new { @class = "page-scroll" })*@
+
                     </li>
                     <li>
                         <a class="page-scroll" href="#resume">Resume</a>
+                        @*@Html.ActionLink("Resume", "index", "home", null, null, "resume", null, null)*@
                     </li>
                     <li>
                         <a class="page-scroll" href="@Url.Action("index", "BlogPosts")">Blog</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="#contact">Contact</a>
+                        @*@Html.ActionLink("Contact", "index", "home", null, null, "contact", null, null)*@
                     </li>
                 </ul>
                 @Html.Partial("_LoginPartial")
-            </div>*@
+            </div>
             <!-- /.navbar-collapse -->
         </div>
         <!-- /.container-fluid -->
     </nav>
+
     <!-- Header -->
     <header id="header_background">
         <div class="container">
             <div class="intro-text">
                 <div id="harvey">Pete Harvey</div>
                 <div class="intro-lead-in">Web Developer</div>
-             </div>
+            </div>
         </div>
     </header>
     <!--ABOUT Section-->
@@ -87,33 +109,9 @@
                     <h3 class="section-subheading text-muted">I have spent the last fifteen years working in the financial services sector in an analysic role.  I've worked for large international banks, small regional banks and private financial firms.  I have decided to pursue a new carreer in the field of web development.</h3>
                 </div>
             </div>
-            @*<div class="row text-center">
-                <div class="col-md-4">
-                    <span class="fa-stack fa-4x">
-                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                        <i class="fa fa-shopping-cart fa-stack-1x fa-inverse"></i>
-                    </span>
-                    <h4 class="service-heading">E-Commerce</h4>
-                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
-                </div>
-                <div class="col-md-4">
-                    <span class="fa-stack fa-4x">
-                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                        <i class="fa fa-laptop fa-stack-1x fa-inverse"></i>
-                    </span>
-                    <h4 class="service-heading">Responsive Design</h4>
-                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
-                </div>
-                <div class="col-md-4">
-                    <span class="fa-stack fa-4x">
-                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                        <i class="fa fa-lock fa-stack-1x fa-inverse"></i>
-                    </span>
-                    <h4 class="service-heading">Web Security</h4>
-                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
-                </div>*@
-            </div>
-        
+
+        </div>
+
     </section>
     <!-- Portfolio Grid Section -->
     <section id="portfolio" class="bg-light-gray">
@@ -121,7 +119,7 @@
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <h2 class="section-heading">Pete's Project Portfolio</h2>
-              <br>
+                    <br>
                     <br>
                     <br>
                 </div>
@@ -300,7 +298,7 @@
                         <li class="timeline-inverted">
                             <div class="timeline-image">
                                 <h4>
-                                    
+
                                     <br>
                                     <br>
                                 </h4>
@@ -320,16 +318,16 @@
                     <h3 class="section-subheading text-muted">Come Back Soon.</h3>
                 </div>
             </div>
-          
+
+        </div>
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 text-center">
+                <p class="large text-muted"></p>
             </div>
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <p class="large text-muted"></p>
-                </div>
-            </div>
-        
+        </div>
+
     </section>
-   
+
     <!-- Contact Section -->
     <section id="contact">
         <div class="container">
@@ -421,22 +419,22 @@
                 <div class="row">
                     <div class="col-lg-8 col-lg-offset-2">
                         <div class="modal-body">*@
-                            <!-- Project Details Go Here -->
-                            @*<h2>Project Name</h2>
-                            <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                            <img class="img-responsive img-centered" src="~/img/portfolio/roundicons-free.png" alt="">
-                            <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                            <p>
-                                <strong>Want these icons in this portfolio item sample?</strong>You can download 60 of them for free, courtesy of <a href="https://getdpd.com/cart/hoplink/18076?referrer=bvbo4kax5k8ogc">RoundIcons.com</a>, or you can purchase the 1500 icon set <a href="https://getdpd.com/cart/hoplink/18076?referrer=bvbo4kax5k8ogc">here</a>.
-                            </p>
-                            
-                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
+    <!-- Project Details Go Here -->
+    @*<h2>Project Name</h2>
+                                <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                                <img class="img-responsive img-centered" src="~/img/portfolio/roundicons-free.png" alt="">
+                                <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                                <p>
+                                    <strong>Want these icons in this portfolio item sample?</strong>You can download 60 of them for free, courtesy of <a href="https://getdpd.com/cart/hoplink/18076?referrer=bvbo4kax5k8ogc">RoundIcons.com</a>, or you can purchase the 1500 icon set <a href="https://getdpd.com/cart/hoplink/18076?referrer=bvbo4kax5k8ogc">here</a>.
+                                </p>
+
+                                <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>*@
+        </div>*@
     <div class="modal fade" id="petesCode" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -472,7 +470,7 @@
                         </div>
 
 
-                            <!-- exercise 2 -->
+                        <!-- exercise 2 -->
 
                         <div>
                             <form>
@@ -487,7 +485,7 @@
                         </div>
                         <br>
 
-                            <!-- // ***  EXCERCISE 3  *** -->
+                        <!-- // ***  EXCERCISE 3  *** -->
 
                         <div>
                             <form>
@@ -505,7 +503,7 @@
                         <br>
 
 
-                            <!-- // ***  EXCERCISE 4 PALINDROME *** -->
+                        <!-- // ***  EXCERCISE 4 PALINDROME *** -->
                         <div>
                             <form>
                                 <h4><b>Palindrome Excercise</b></h4>
@@ -520,7 +518,7 @@
                             </form>
                         </div>
 
-                            <!--SyntaxHighlighter Below-->
+                        <!--SyntaxHighlighter Below-->
 <pre class="brush:js;">
   ** Exercise #1 **
                                 
@@ -562,7 +560,6 @@ for(var i=0; i < myArr.length; i++){
 $("#productOutput").append(product);
 })
 })
-
    ** Exercise #2 **
     $("#userButton").click(function(event) {
   event.preventDefault();
@@ -596,7 +593,6 @@ fbOutput= $("#fbResult").append("The result is ");
         }
     }
 });
-
     ** Exercise #4 -  PALINDROME  **
                                                   var palInput =$("#palInput").val().toLowerCase();
 	palInput=palInput.replace(/[^[abc],[0-9]+/g, '');
@@ -614,8 +610,8 @@ function runPalindrome(word) {
         };
 </pre>
 
+                    </div>
                 </div>
-            </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                     <button type="button" class="btn btn-primary">Save changes</button>
@@ -752,10 +748,19 @@ function runPalindrome(word) {
             </div>
         </div>
     </div>
-    <!-- jQuery -->
-    <script src="~/vendor/jquery/jquery.min.js"></script>
-    <!-- Bootstrap Core JavaScript -->
-    <script src="~/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <div class="container body-content">
+
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @*@RenderSection("scripts", required: false)*@
+
+  
     <!-- SyntaxHighlighter -->
     <script src="~/vendor/SyntaxHighlighter/scripts/shCore.js"></script>
     <script src="~/vendor/SyntaxHighlighter/scripts/shBrushJScript.js"></script>
@@ -769,5 +774,6 @@ function runPalindrome(word) {
     <script src="~/js/agency.min.js"></script>
     <!-- JavaScript exercises -->
     <script src="~/js/fivenumbers.js"></script>
+
 </body>
 </html>
