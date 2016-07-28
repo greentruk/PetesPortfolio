@@ -77,6 +77,6 @@
 \\mac\home\documents\visual studio 2015\Projects\PetesPortfolio\PetesPortfolio\bin\Microsoft.Owin.Security.Google.xml
 \\mac\home\documents\visual studio 2015\Projects\PetesPortfolio\PetesPortfolio\bin\Microsoft.Owin.Security.Twitter.xml
 \\mac\home\documents\visual studio 2015\Projects\PetesPortfolio\PetesPortfolio\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
-\\mac\home\documents\visual studio 2015\Projects\PetesPortfolio\PetesPortfolio\obj\Debug\PetesPortfolio.csprojResolveAssemblyReference.cache
 \\mac\home\documents\visual studio 2015\Projects\PetesPortfolio\PetesPortfolio\obj\Debug\PetesPortfolio.dll
 \\mac\home\documents\visual studio 2015\Projects\PetesPortfolio\PetesPortfolio\obj\Debug\PetesPortfolio.pdb
+\\mac\home\documents\visual studio 2015\Projects\PetesPortfolio\PetesPortfolio\obj\Debug\PetesPortfolio.csprojResolveAssemblyReference.cache

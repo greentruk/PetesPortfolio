@@ -234,6 +234,9 @@
     <Content Include="img\about\banner4.jpeg" />
     <Content Include="img\about\banner5.jpeg" />
     <Content Include="img\about\banner6.jpg" />
+    <Content Include="img\about\blogImageOne.1140x800.jpeg" />
+    <Content Include="img\about\blogImageThree.1140x800.jpeg" />
+    <Content Include="img\about\blogImageTwo.1140x800.jpeg" />
     <Content Include="img\about\blogpost_img_750x500.jpg" />
     <Content Include="img\about\boalogo.png" />
     <Content Include="img\about\btlogo.png" />
@@ -941,6 +944,8 @@
     <Content Include="tinymce\tools\tasks\bundle.js" />
     <Content Include="tinymce\tools\tasks\moxiezip.js" />
     <Content Include="tinymce\tools\tasks\skin.js" />
+    <Content Include="uploads\javascript-logo.png" />
+    <Content Include="uploads\map-image.png" />
     <Content Include="vendor\bootstrap\css\bootstrap.css" />
     <Content Include="vendor\bootstrap\css\bootstrap.min.css" />
     <Content Include="vendor\bootstrap\fonts\glyphicons-halflings-regular.svg" />
