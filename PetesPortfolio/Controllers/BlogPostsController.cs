@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using PetesPortfolio.Models;
 using PetesPortfolio.Models.codeFirst;
+using System.IO;
 
 namespace PetesPortfolio.Controllers
 {
@@ -52,10 +53,28 @@ namespace PetesPortfolio.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Created,Updated,Title,Slug,Body,MediaURL,Pulbished")] BlogPost blogPost)
+        public ActionResult Create([Bind(Include = "Id,Created,Updated,Title,Slug,Body,MediaURL,Pulbished")] BlogPost blogPost, HttpPostedFileBase image)
         {
+            if (image != null && image.ContentLength > 0)
+            {
+                //check the file name to make sure its an image
+                var ext = Path.GetExtension(image.FileName).ToLower();
+                if (ext != ".png" && ext != ".jpg" && ext != ".jpeg" && ext != ".gif" && ext != ".bmp")
+                    ModelState.AddModelError("image", "Invalid Format.");
+            }
+
             if (ModelState.IsValid)
             {
+                if (image != null)
+                {
+                    //relative server path
+                    var filePath = "/uploads/";
+                    // path on physical drive on server
+                    var absPath = Server.MapPath("~" + filePath);
+                    blogPost.MediaURL = filePath + image.FileName;
+                    //save image
+                    image.SaveAs(Path.Combine(absPath, image.FileName));
+                }
                 blogPost.Created = DateTime.Now;
                 db.Posts.Add(blogPost);
                 db.SaveChanges();
@@ -66,6 +85,7 @@ namespace PetesPortfolio.Controllers
         }
 
         // GET: BlogPosts/Edit/5
+        [Authorize(Roles = "Admin")]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -85,19 +105,41 @@ namespace PetesPortfolio.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Created,Updated,Title,Slug,Body,MediaURL,Pulbished")] BlogPost blogPost)
+        public ActionResult Edit([Bind(Include = "Id,Created,Updated,Title,Slug,Body,MediaURL,Pulbished")] BlogPost blogPost, HttpPostedFileBase image)
         {
+            if (image != null && image.ContentLength > 0)
+            {
+                //check the file name to make sure its an image
+                var ext = Path.GetExtension(image.FileName).ToLower();
+                if (ext != ".png" && ext != ".jpg" && ext != ".jpeg" && ext != ".gif" && ext != ".bmp")
+                    ModelState.AddModelError("image", "Invalid Format.");
+            }
+
             if (ModelState.IsValid)
             {
-                blogPost.Updated = DateTime.Now;
-                db.Entry(blogPost).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                if (image != null)
+                {
+                    //relative server path
+                    var filePath = "/uploads/";
+                    // path on physical drive on server
+                    var absPath = Server.MapPath("~" + filePath);
+                    blogPost.MediaURL = filePath + image.FileName;
+                    //save image
+                    image.SaveAs(Path.Combine(absPath, image.FileName));
+                }
+                    db.Posts.Attach(blogPost);
+                    db.Entry(blogPost).State = EntityState.Modified;
+
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
+                return View(blogPost);
             }
-            return View(blogPost);
-        }
+             
+        
 
         // GET: BlogPosts/Delete/5
+        [Authorize(Roles = "Admin")]
         public ActionResult Delete(int? id)
         {
             if (id == null)
