@@ -43,7 +43,7 @@
                                     @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
 
                                     @Html.ActionLink("Delete", "Delete", new { id = item.Id })
-                                    <div class="read-more">@Html.ActionLink("Details", "Details", new { id = item.Id })</div>
+                                    <div class="read-more"><a href="@Url.Action("Details", new {slug= item.Slug})">@item.Title</a></div>
                                 </div>
                             </div>
                         }

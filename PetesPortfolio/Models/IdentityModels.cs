@@ -6,6 +6,7 @@ using Microsoft.AspNet.Identity.EntityFramework;
 
 using System.Collections.Generic;
 using PetesPortfolio.Models.codeFirst;
+using System.Collections;
 
 namespace PetesPortfolio.Models
 {
@@ -44,6 +45,7 @@ namespace PetesPortfolio.Models
         }
         public DbSet<BlogPost> Posts { get; set; }
         public DbSet<Comment> Comments { get; set; }
+        public IEnumerable ApplicationUsers { get; internal set; }
     }
 }
 

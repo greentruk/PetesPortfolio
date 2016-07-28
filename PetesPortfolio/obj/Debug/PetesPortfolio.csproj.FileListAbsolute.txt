@@ -80,3 +80,7 @@
 \\mac\home\documents\visual studio 2015\Projects\PetesPortfolio\PetesPortfolio\obj\Debug\PetesPortfolio.dll
 \\mac\home\documents\visual studio 2015\Projects\PetesPortfolio\PetesPortfolio\obj\Debug\PetesPortfolio.pdb
 \\mac\home\documents\visual studio 2015\Projects\PetesPortfolio\PetesPortfolio\obj\Debug\PetesPortfolio.csprojResolveAssemblyReference.cache
+\\mac\home\documents\visual studio 2015\Projects\PetesPortfolio\PetesPortfolio\bin\PagedList.dll
+\\mac\home\documents\visual studio 2015\Projects\PetesPortfolio\PetesPortfolio\bin\PagedList.Mvc.dll
+\\mac\home\documents\visual studio 2015\Projects\PetesPortfolio\PetesPortfolio\bin\PagedList.xml
+\\mac\home\documents\visual studio 2015\Projects\PetesPortfolio\PetesPortfolio\bin\PagedList.Mvc.xml

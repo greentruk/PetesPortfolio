@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
 using System.Linq;
+using PagedList;
+using PagedList.Mvc;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using PetesPortfolio.Models;
 using PetesPortfolio.Models.codeFirst;
 using System.IO;
+using aNewBlog.Models;
 
 namespace PetesPortfolio.Controllers
 {
@@ -16,24 +19,22 @@ namespace PetesPortfolio.Controllers
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        public object Dateline { get; private set; }
-
         // GET: BlogPosts
-        
+
         public ActionResult Index()
         {
-            
+
             return View(db.Posts.ToList());
         }
 
         // GET: BlogPosts/Details/5
-        public ActionResult Details(int? id)
+        public ActionResult Details(string Slug)
         {
-            if (id == null)
+            if (String.IsNullOrWhiteSpace(Slug))
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            BlogPost blogPost = db.Posts.Find(id);
+            BlogPost blogPost = db.Posts.FirstOrDefault(p => p.Slug == Slug);
             if (blogPost == null)
             {
                 return HttpNotFound();
@@ -53,7 +54,7 @@ namespace PetesPortfolio.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Created,Updated,Title,Slug,Body,MediaURL,Pulbished")] BlogPost blogPost, HttpPostedFileBase image)
+        public ActionResult Create([Bind(Include = "Id,Title,Slug,Body,MediaURL,Pulbished")] BlogPost blogPost, HttpPostedFileBase image)
         {
             if (image != null && image.ContentLength > 0)
             {
@@ -65,24 +66,41 @@ namespace PetesPortfolio.Controllers
 
             if (ModelState.IsValid)
             {
-                if (image != null)
+                var Slug = StringUtilities.URLFriendly(blogPost.Title);
+                if (String.IsNullOrWhiteSpace(Slug))
                 {
-                    //relative server path
-                    var filePath = "/uploads/";
-                    // path on physical drive on server
-                    var absPath = Server.MapPath("~" + filePath);
-                    blogPost.MediaURL = filePath + image.FileName;
-                    //save image
-                    image.SaveAs(Path.Combine(absPath, image.FileName));
+                    ModelState.AddModelError("Title", "Invalid title.");
+                    return View(blogPost);
                 }
-                blogPost.Created = DateTime.Now;
-                db.Posts.Add(blogPost);
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
+                if (db.Posts.Any(p => p.Slug == Slug))
+                {
+                    ModelState.AddModelError("Title", "Title must be unique.");
+                    return View(blogPost);
+                }
 
+                {
+                    if (image != null)
+                    {
+                        //relative server path
+                        var filePath = "/uploads/";
+                        // path on physical drive on server
+                        var absPath = Server.MapPath("~" + filePath);
+                        blogPost.MediaURL = filePath + image.FileName;
+                        //save image
+                        image.SaveAs(Path.Combine(absPath, image.FileName));
+                    }
+                    blogPost.Created = DateTimeOffset.Now;
+                    blogPost.Slug = Slug;
+                    db.Posts.Add(blogPost);
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
+
+                
+            }
             return View(blogPost);
         }
+    
 
         // GET: BlogPosts/Edit/5
         [Authorize(Roles = "Admin")]
