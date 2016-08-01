@@ -1273,6 +1273,7 @@
     <Content Include="vendor\SyntaxHighlighter\tests\js\qunit.js" />
     <Content Include="vendor\SyntaxHighlighter\tests\syntaxhighlighter_tests.html" />
     <Content Include="vendor\SyntaxHighlighter\tests\theme_tests.html" />
+    <Content Include="Views\Comments\Index.cshtml" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -1379,7 +1380,6 @@
     <Content Include="Views\Comments\Delete.cshtml" />
     <Content Include="Views\Comments\Details.cshtml" />
     <Content Include="Views\Comments\Edit.cshtml" />
-    <Content Include="Views\Comments\Index.cshtml" />
     <Content Include="vendor\CK_Editor\CHANGES.md" />
     <Content Include="vendor\CK_Editor\LICENSE.md" />
     <Content Include="vendor\CK_Editor\README.md" />

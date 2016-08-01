@@ -54,12 +54,16 @@ namespace PetesPortfolio.Controllers
         {
             if (ModelState.IsValid)
             {
+                comment.Created = DateTimeOffset.Now;
                 db.Comments.Add(comment);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+
+                var post = db.Posts.FirstOrDefault(p => p.Id == comment.PostId);
+                var slugroute = post.Slug;
+                return RedirectToAction("Details", "BlogPosts", new { slug = slugroute });
             }
 
-            ViewBag.AuthorId = new SelectList(db.ApplicationUsers, "Id", "FirstName", comment.AuthorId);
+          
             ViewBag.PostId = new SelectList(db.Posts, "Id", "Title", comment.PostId);
             return View(comment);
         }
@@ -76,7 +80,6 @@ namespace PetesPortfolio.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.AuthorId = new SelectList(db.ApplicationUsers, "Id", "FirstName", comment.AuthorId);
             ViewBag.PostId = new SelectList(db.Posts, "Id", "Title", comment.PostId);
             return View(comment);
         }
@@ -100,6 +103,7 @@ namespace PetesPortfolio.Controllers
         }
 
         // GET: Comments/Delete/5
+        [Authorize]
         public ActionResult Delete(int? id)
         {
             if (id == null)

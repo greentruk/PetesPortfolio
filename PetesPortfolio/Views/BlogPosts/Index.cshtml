@@ -18,9 +18,9 @@
                 </ul>
             </section>*@
             <section>
-                <h3>
+                <h4>
                     @Html.ActionLink("Create New Blog", "Create")
-                </h3>
+                </h4>
                 <div class="row">
                     <div class="col-md-12">
 
@@ -35,15 +35,15 @@
                                     }
                                 </div>
                                 <div class="blog-post-body">
-                                    <h2><a href="@Url.Action("Details", new { id = item.Id })">@Html.DisplayFor(modelItem => item.Title)</a></h2>
-                                    <div class="post-meta"><span>by <a href="#">Pete Harvey</a></span>/<span><i class="fa fa-clock-o"></i>@Html.DisplayFor(modelItem => item.Created)</span>/<span><i class="fa fa-comment-o"></i> <a href="#">343</a></span></div>
+                                    <h2><a href="@Url.Action("Details", new {slug= item.Slug})">@Html.DisplayFor(modelItem => item.Title)</a></h2>
+                                    <div class="post-meta"><span>by <a href="#">Pete Harvey</a></span>/<span><i class="fa fa-clock-o"></i>@Html.DisplayFor(modelItem => item.Created)</span></div>
                                     <p>
                                         @Html.Raw(item.Body)
                                     </p>
                                     @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
 
                                     @Html.ActionLink("Delete", "Delete", new { id = item.Id })
-                                    <div class="read-more"><a href="@Url.Action("Details", new {slug= item.Slug})">@item.Title</a></div>
+                                    @*<div class="read-more"><a href="@Url.Action("Details", new {slug= item.Slug})">@item.Title</a></div>*@
                                 </div>
                             </div>
                         }
