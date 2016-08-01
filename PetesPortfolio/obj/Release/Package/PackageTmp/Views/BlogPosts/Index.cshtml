@@ -1,62 +1,78 @@
-﻿@model IEnumerable<PetesPortfolio.Models.codeFirst.BlogPost>
-
+﻿@model IPagedList<PetesPortfolio.Models.codeFirst.BlogPost>
+@using PagedList;
+@using PagedList.Mvc;
 
 
 <div class="Container h4">
     <div class="col-lg-12">
 
         <div class="container">
-            
-                <h2>Pete's Blog</h2>
-                @*<a href="index.html"><img src="~/Renda_Blog_Template/images/logo.png"></a>*@
-          
-            <section class="main-slider">
+
+            <h2>Pete's Blog</h2>
+            @*<a href="index.html"><img src="~/Renda_Blog_Template/images/logo.png"></a>*@
+
+            @*<section class="main-slider">
                 <ul class="bxslider">
                     <li><div class="slider-item"><img src="~/img/banner4_1140x500.jpeg" /><h2><a href="post.html" title="This is a story about an old truck">This is a story about an old truck</a></h2></div></li>
                     <li><div class="slider-item"><img src="~/img/banner5.1140x500.jpg" /><h2><a href="post.html" title="This is a story about things resting on a desk">This is a story about things resting on a desk</a></h2></div></li>
                     <li><div class="slider-item"><img src="~/img/banner6.1140x500.jpg" /><h2><a href="post.html" title="This is a story about old rusty tools">This is a story about old rusty tools</a></h2></div></li>
                 </ul>
-            </section>
+            </section>*@
             <section>
-                <h3>
+                <h4>
                     @Html.ActionLink("Create New Blog", "Create")
-                </h3>
+                </h4>
                 <div class="row">
                     <div class="col-md-12">
-           
+                    @using (Html.BeginForm("Index", "BlogPosts", FormMethod.Get, new { enctype = "Multipart/form-data" }))
+                    {
+                    <input type="text" name="searchStr" class="form-control" />
+                    <input type="submit" value="Search All Blogs" class="btn btn-default"/>
+                    }
+
                         @foreach (var item in Model)
                         {
                             <div class="blog-post">
-                                <div class="blog-post-image">
-                                    <a href="post.html"><img src="~/img/blogpost_img_750x500.jpg" /></a>
+                                 <div class="blog-post-image">
+                                    @if (item.MediaURL != null)
+                                    {
+                                        <img class="img-responsive" src="@item.MediaURL" alt="">
+                                        <hr>
+                                    }
                                 </div>
                                 <div class="blog-post-body">
-                                    <h2><a href="@Url.Action("Details", new { id = item.Id })">@Html.DisplayFor(modelItem => item.Title)</a></h2>
-                                    <div class="post-meta"><span>by <a href="#">Pete Harvey</a></span>/<span><i class="fa fa-clock-o"></i>@Html.DisplayFor(modelItem => item.Created)</span>/<span><i class="fa fa-comment-o"></i> <a href="#">343</a></span></div>
+                                    <h2><a href="@Url.Action("Details", new { slug = item.Slug })">@Html.DisplayFor(modelItem => item.Title)</a></h2>
+                                    <div class="post-meta"><span>by <a href="#">Pete Harvey</a></span>/<span><i class="fa fa-clock-o"></i>@item.Created.ToString("d")</span></div>
                                     <p>
                                         @Html.Raw(item.Body)
                                     </p>
                                     @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-                                   
+
                                     @Html.ActionLink("Delete", "Delete", new { id = item.Id })
-                                    <div class="read-more">@Html.ActionLink("Details", "Details", new { id = item.Id })</div>
+                                    @*<div class="read-more"><a href="@Url.Action("Details", new {slug= item.Slug})">@item.Title</a></div>*@
                                 </div>
                             </div>
-                        }
+                            }
 
                     </div>
-              
+                </div>
+            </section>
+            Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount @Html.PagedListPager(Model, page => Url.Action( "Index", new {page}))
+        </div>
+    </div>
+</div>
+
             @*================================================== -->*@
-        <!-- Placed at the end of the document so the pages load faster -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-        <script src="~/Renda_Blog_Template/js/bootstrap.min.js"></script>
-        <script src="~/Renda_Blog_Template/js/jquery.bxslider.js"></script>
-        <script src="~/Renda_Blog_Template/js/mooz.scripts.min.js"></script>
-        </body>
-        </html>
+            <!-- Placed at the end of the document so the pages load faster -->
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+            <script src="~/Renda_Blog_Template/js/bootstrap.min.js"></script>
+            <script src="~/Renda_Blog_Template/js/jquery.bxslider.js"></script>
+            <script src="~/Renda_Blog_Template/js/mooz.scripts.min.js"></script>
+            </body>
+            </html>
 
 
-        @*@{
+            @*@{
                 ViewBag.Title = "Index";
             }
 

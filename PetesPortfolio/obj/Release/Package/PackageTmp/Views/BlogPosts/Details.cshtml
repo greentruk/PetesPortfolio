@@ -4,45 +4,28 @@
     ViewBag.Title = "Details";
 }
 
-@*@{ 
-    Layout = null;
-}
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="favicon.ico">
-    <title>Renda - clean blog theme based on Bootstrap</title>
-    <!-- Bootstrap core CSS -->
-    <link href="~/Renda_Blog_Template/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-    <!-- Custom styles for this template -->
-    <link href="~/Renda_Blog_Template/css/jquery.bxslider.css" rel="stylesheet">
-    <link href="~/Renda_Blog_Template/css/style.css" rel="stylesheet">
-</head>*@
-@*<body>*@
    
     <div class="container">
         <div class="col-md-12">
-            <header>
-                <a href="index.html"><img src="~/Renda_Blog_Template/images/logo.png"></a>
-            </header>
+          <header>
+                @*<a href="index.html"><img src="~/Renda_Blog_Template/images/logo.png"></a>*@
+          </header>
             <section>
                 <div class="row">
                     <div class="col-md-12">
                         <article class="blog-post">
-                            <div class="blog-post-image">
-                                <a href="post.html"><img src="~/img/banner4_1140x500.jpeg" /></a>
-                            </div>
+                            @*<div class="blog-post-image">
+                <a href="post.html"><img src="~/img/banner4_1140x500.jpeg" /></a>
+            </div>*@
+
+                            @if (Model.MediaURL != null)
+                            {
+                                <img class="img-responsive" src="@Model.MediaURL" alt="">
+                            }
+
                             <div class="blog-post-body">
-                                <h2><a href="post.html">@Html.DisplayFor(model => model.Title)</a></h2>
-                                <div class="post-meta"><span>by <a href="#">Pete Harvey</a></span>/<span><i class="fa fa-clock-o"></i>@Html.DisplayFor(model => model.Created)</span>/<span><i class="fa fa-comment-o"></i> <a href="#">343</a></span></div>
+                                <h2>@Html.DisplayFor(model => model.Title)</h2>
+                                <div class="post-meta"><span>by <a href="#">Pete Harvey</a></span>/<span><i class="fa fa-clock-o"></i>@Model.Created.ToString("d")</span>@*/<span><i class="fa fa-comment-o"></i> <a href="#">343</a></span>*@</div>
                                 <div class="blog-post-text">
                                     <p>
                                         @*@Html.DisplayFor(model => model.Body)*@
@@ -50,108 +33,91 @@
                                     </p>
                                     @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
                                     @Html.ActionLink("Back to List", "Index")
-
                                 </div>
+                            </div>
+
+
+                            @********************* Begin of Create Comment   ******************************************************************************************************@
+                            <div class="form-group">
+                                <div class="col-md-12">
+
+                                    @using (Html.BeginForm("Create", "Comments", FormMethod.Post))
+                                    {
+                                        @Html.AntiForgeryToken()
+
+                                        @*<div class="form-horizontal">*@
+                                        @*<div class="col-md-12">*@
+                                        @*<div class="col-md-offset-2 col-md-10">*@
+                                        <h5>Leave a comment</h5>
+
+                                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                                        <input type="text" name="Body" class="form-control">
+                                        <input type="hidden" name="PostId" value="@Model.Id" />
+
+
+                                        <div class="form-group">
+                                            @*<div class="col-md-offset-2 col-md-10">*@
+                                            <div class="col-md-12">
+                                                <input type="submit" value="Create Comment" class="btn btn-default" />
+                                                <br />
+                                                <br />
+                                            </div>
+                                        </div>
+                                    }
+                                </div>
+                            </div>
+                            @********************* End of Create Comment   ******************************************************************************************************@
+
+                            
+                            
+                                <div class="Container h5">
+                                        <div class="col-md-10">
+                             
+                                            @foreach (var com in Model.Comments)
+                                            {
+                                                <dl class="dl-horizontal">
+                                                    <dt>
+                                                        Comment
+                                                    </dt>
+
+                                                    <dd>
+                                                        @com.Body
+                                                    </dd>
+
+                                                    <dt>
+                                                        Comment Date
+                                                    </dt>
+
+                                                    <dd>
+                                                        @com.Created.ToString("d")
+                                                    </dd>
+
+                                                    <dt>
+                                                        Author:
+                                                    </dt>
+
+                                                    <dd>
+                                                        @com.Author
+                                                    </dd>
+
+                                                </dl>
+                                                    <div>
+                                                        @Html.ActionLink("Edit", "Edit", "Comments", new { id = @com.Id }, null) |
+                                                        @Html.ActionLink("Delete", "Delete", "Comments", new { id = @com.Id }, null)
+                                                    </div>
+                                            }
+                                        </div>
+                                    </div>
                             </div>
                         </article>
                     </div>
-
-
                 </div>
             </section>
                 </div>
-         
-    </div><!-- /.container -->
- 
-    <!-- Bootstrap core JavaScript
-        ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    @*<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="~/Renda_Blog_Template/js/bootstrap.min.js"></script>
-    <script src="~/Renda_Blog_Template/js/jquery.bxslider.js"></script>*@
-    
-@*</body>
-</html>*@
+            </div>
 
 
-
-
-
-
-
-@*<h2>Details</h2>*@
-
-
-@*<div>
-    <h4>BlogPost</h4>
-    <hr />
-    <div class="Container h4">
-        <div class="col-lg-10">
-            <dl class="dl-horizontal">
-                <dt>
-                    @Html.DisplayNameFor(model => model.Created)
-                </dt>
-
-                <dd>
-                    @Html.DisplayFor(model => model.Created)
-                </dd>
-
-                <dt>
-                    @Html.DisplayNameFor(model => model.Updated)
-                </dt>
-
-                <dd>
-                    @Html.DisplayFor(model => model.Updated)
-                </dd>
-
-                <dt>
-                    @Html.DisplayNameFor(model => model.Title)
-                </dt>
-
-                <dd>
-                    @Html.DisplayFor(model => model.Title)
-                </dd>
-
-                <dt>
-                    @Html.DisplayNameFor(model => model.Slug)
-                </dt>
-
-                <dd>
-                    @Html.DisplayFor(model => model.Slug)
-                </dd>
-
-                <dt>
-                    @Html.DisplayNameFor(model => model.Body)
-                </dt>
-
-                <dd>
-                    @Html.Raw(Model.Body)
-                </dd>
-
-                <dt>
-                    @Html.DisplayNameFor(model => model.MediaURL)
-                </dt>
-
-                <dd>
-                    @Html.DisplayFor(model => model.MediaURL)
-                </dd>
-
-                <dt>
-                    @Html.DisplayNameFor(model => model.Pulbished)
-                </dt>
-
-                <dd>
-                    @Html.DisplayFor(model => model.Pulbished)
-                </dd>
-
-            </dl>
-        </div>
-        </div>
-    </div>
-        <p>
-            @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-            @Html.ActionLink("Back to List", "Index")
-        </p>*@
 
 @section scripts {
     <script src="~/Renda_Blog_Template/js/mooz.scripts.min.js"></script>

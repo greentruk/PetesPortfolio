@@ -54,15 +54,15 @@ namespace PetesPortfolio
             //   consumerKey: "",
             //   consumerSecret: "");
 
-            //app.UseFacebookAuthentication(
-            //   appId: "",
-            //   appSecret: "");
+            app.UseFacebookAuthentication(
+               appId: "1140305602709912",
+               appSecret: "7534e6963b7d8bcf2e3b45e791e712a3");
 
-            //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
-            //{
-            //    ClientId = "",
-            //    ClientSecret = ""
-            //});
+            app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
+            {
+                ClientId = "214703396036-812cgsl9r78cma16lur7a5a3orji3kdd.apps.googleusercontent.com",
+                ClientSecret = "2DxGGoGAov_N4BbC70MLRuz0"
+            });
         }
     }
 }

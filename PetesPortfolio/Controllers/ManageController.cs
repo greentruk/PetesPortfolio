@@ -10,6 +10,7 @@ using PetesPortfolio.Models;
 
 namespace PetesPortfolio.Controllers
 {
+    [RequireHttps]
     [Authorize]
     public class ManageController : Controller
     {

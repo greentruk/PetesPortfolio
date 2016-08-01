@@ -15,18 +15,34 @@ using aNewBlog.Models;
 
 namespace PetesPortfolio.Controllers
 {
+    [RequireHttps]
     public class BlogPostsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: BlogPosts
 
-        public ActionResult Index()
+        public ActionResult Index(string searchStr, int? page)
+
         {
+            var result = db.Posts.Where(p => p.Body.Contains(searchStr))
+                    .Union(db.Posts.Where(p => p.Title.Contains(searchStr)))
+                    .Union(db.Posts.Where(p => p.Comments.Any(c => c.Body.Contains(searchStr))))
+                    .Union(db.Posts.Where(p => p.Comments.Any(c => c.Author.DisplayName.Contains(searchStr))))
+                    .Union(db.Posts.Where(p => p.Comments.Any(c => c.Author.FirstName.Contains(searchStr))))
+                    .Union(db.Posts.Where(p => p.Comments.Any(c => c.Author.LastName.Contains(searchStr))))
+                    .Union(db.Posts.Where(p => p.Comments.Any(c => c.Author.UserName.Contains(searchStr))))
+                    .Union(db.Posts.Where(p => p.Comments.Any(c => c.Author.Email.Contains(searchStr))))
+                    .Union(db.Posts.Where(p => p.Comments.Any(c => c.UpdateReason.Contains(searchStr))));
 
-            return View(db.Posts.ToList());
-        }
-
+            int pageSize = 3;
+            int pageNumber = (page ?? 1);
+            if (String.IsNullOrEmpty(searchStr))
+                return View(db.Posts.OrderBy(p => p.Created).ToPagedList(pageNumber, pageSize));
+            else
+                return View(result.OrderBy(p => p.Created).ToPagedList(pageNumber, pageSize));
+         }
+  
         // GET: BlogPosts/Details/5
         public ActionResult Details(string Slug)
         {

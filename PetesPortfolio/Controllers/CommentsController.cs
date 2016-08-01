@@ -11,6 +11,7 @@ using PetesPortfolio.Models.codeFirst;
 
 namespace PetesPortfolio.Controllers
 {
+    [RequireHttps]
     public class CommentsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
@@ -54,6 +55,7 @@ namespace PetesPortfolio.Controllers
         {
             if (ModelState.IsValid)
             {
+                
                 comment.Created = DateTimeOffset.Now;
                 db.Comments.Add(comment);
                 db.SaveChanges();
@@ -93,9 +95,10 @@ namespace PetesPortfolio.Controllers
         {
             if (ModelState.IsValid)
             {
+                var post = db.Posts.Find(comment.PostId);
                 db.Entry(comment).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Details", "BlogPosts", new { slug = post.Slug });
             }
             ViewBag.AuthorId = new SelectList(db.ApplicationUsers, "Id", "FirstName", comment.AuthorId);
             ViewBag.PostId = new SelectList(db.Posts, "Id", "Title", comment.PostId);
@@ -124,9 +127,10 @@ namespace PetesPortfolio.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             Comment comment = db.Comments.Find(id);
+            var post = db.Posts.Find(comment.PostId);
             db.Comments.Remove(comment);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("Details", "BlogPosts", new { slug = post.Slug });
         }
 
         protected override void Dispose(bool disposing)

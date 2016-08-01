@@ -18,7 +18,7 @@
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
-    <IISExpressSSLPort />
+    <IISExpressSSLPort>44337</IISExpressSSLPort>
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
@@ -354,6 +354,7 @@
     <Content Include="less\variables.less" />
     <Content Include="img\about\Thumbs.db" />
     <None Include="Properties\PublishProfiles\pharvey %2810%29.pubxml" />
+    <None Include="Properties\PublishProfiles\pharvey %2811%29.pubxml" />
     <None Include="Properties\PublishProfiles\pharvey %282%29.pubxml" />
     <None Include="Properties\PublishProfiles\pharvey %283%29.pubxml" />
     <None Include="Properties\PublishProfiles\pharvey %284%29.pubxml" />
@@ -1496,7 +1497,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>52180</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:52180/</IISUrl>
+          <IISUrl>https://localhost:44337/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
