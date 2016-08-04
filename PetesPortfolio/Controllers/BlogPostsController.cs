@@ -38,7 +38,7 @@ namespace PetesPortfolio.Controllers
             int pageSize = 3;
             int pageNumber = (page ?? 1);
             if (String.IsNullOrEmpty(searchStr))
-                return View(db.Posts.OrderBy(p => p.Created).ToPagedList(pageNumber, pageSize));
+                return View(db.Posts.OrderByDescending(p => p.Created).ToPagedList(pageNumber, pageSize));
             else
                 return View(result.OrderBy(p => p.Created).ToPagedList(pageNumber, pageSize));
          }

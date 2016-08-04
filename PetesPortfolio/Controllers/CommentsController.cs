@@ -39,6 +39,7 @@ namespace PetesPortfolio.Controllers
         }
 
         // GET: Comments/Create
+        [Authorize]
         public ActionResult Create()
         {
          
@@ -71,6 +72,7 @@ namespace PetesPortfolio.Controllers
         }
 
         // GET: Comments/Edit/5
+        [Authorize]
         public ActionResult Edit(int? id)
         {
             if (id == null)
