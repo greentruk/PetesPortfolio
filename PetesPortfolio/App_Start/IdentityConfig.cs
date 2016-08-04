@@ -19,6 +19,12 @@ namespace PetesPortfolio
         public Task SendAsync(IdentityMessage message)
         {
             // Plug in your email service here to send an email.
+            new EmailService.SendAsync(new IdentityMessage
+            { 
+                Destination = "pharvey.azurewebsites.net",
+                Subject = "S",
+                Body = "B"
+            });
             return Task.FromResult(0);
         }
     }

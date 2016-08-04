@@ -35,7 +35,7 @@
                     FirstName = "Pete",
                     LastName = "Harvey",
                     DisplayName = "Pete Harvey"
-                }, "Banana@207");
+                }, "Coder@207");
             }
             if (!context.Users.Any(u => u.Email == "moderator@coderfoundry.com"))
             {
