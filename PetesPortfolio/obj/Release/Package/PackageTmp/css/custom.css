@@ -2,7 +2,9 @@
 #harvey {
     font-family: "Kaushan Script","Helvetica Neue",Helvetica,Arial,cursive;
     font-size:130px;
-    color: #f2f2f2;
+    color: #fed136; 
+    text-shadow: #000 0px 0px 1px;
+    -webkit-font-smoothing: antialiased;
 }
 
 #header_background {
@@ -17,3 +19,21 @@
 }
 
 .navbar-custom {background-color: black}
+
+
+
+.main-slider 
+{
+    padding: 0px 0;
+}
+
+
+.section {
+    padding: 10px 0;
+}
+
+.intro-lead-in {
+     color: #f6fff3;
+      text-shadow: #000 0px 0px 1px;
+    -webkit-font-smoothing: antialiased;
+}

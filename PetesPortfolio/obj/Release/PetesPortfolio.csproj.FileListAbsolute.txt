@@ -84,3 +84,9 @@
 \\mac\home\documents\visual studio 2015\Projects\PetesPortfolio\PetesPortfolio\bin\PagedList.Mvc.dll
 \\mac\home\documents\visual studio 2015\Projects\PetesPortfolio\PetesPortfolio\bin\PagedList.xml
 \\mac\home\documents\visual studio 2015\Projects\PetesPortfolio\PetesPortfolio\bin\PagedList.Mvc.xml
+\\Mac\Home\Documents\Visual Studio 2015\Projects\PetesPortfolio\PetesPortfolio\bin\SendGrid.CSharp.HTTP.Client.dll
+\\Mac\Home\Documents\Visual Studio 2015\Projects\PetesPortfolio\PetesPortfolio\bin\SendGrid.dll
+\\Mac\Home\Documents\Visual Studio 2015\Projects\PetesPortfolio\PetesPortfolio\bin\SendGrid.SmtpApi.dll
+\\Mac\Home\Documents\Visual Studio 2015\Projects\PetesPortfolio\PetesPortfolio\bin\SendGridMail.dll
+\\Mac\Home\Documents\Visual Studio 2015\Projects\PetesPortfolio\PetesPortfolio\bin\System.Net.Http.Formatting.dll
+\\Mac\Home\Documents\Visual Studio 2015\Projects\PetesPortfolio\PetesPortfolio\bin\System.Net.Http.Formatting.xml

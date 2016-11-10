@@ -11,7 +11,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="favicon.ico">
-    <title>Agency - Start Bootstrap Theme</title>
+    <title>Pete Harvey - Portfolio</title>
     <!-- Bootstrap core CSS -->
     @*<link href="css/bootstrap.min.css" rel="stylesheet">*@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
@@ -32,12 +32,10 @@
 
     <!-- Theme CSS -->
     <link href="~/css/agency.min.css" rel="stylesheet">
-    @*<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-        @*[if lt IE 9]>
+  
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
             <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-        <![endif]*@
+      
     <!-- custom CSS -->
     <link href="~/css/custom.css" rel="stylesheet" />
 </head>
@@ -59,32 +57,24 @@
                     <li class="hidden">
                         <a href="#page-top"></a>
                     </li>
-                    <li>
-                            <a class="page-scroll" href="#about">About</a>
-                        </li>
                     @*<li>
-
-                        Html.ActionLink("About", "index", "home", null, null, "about", null, null)
-                    </li>*@
+                            <a class="page-scroll" href="#about">About</a>
+                        </li>*@
                     <li>
                         <a class="page-scroll" href="#portfolio">Portfolio</a>
-                        @*@Html.ActionLink("Portfolio", "index", "home", null, null, "portfolio", null, null)*@
-                        @*@Html.ActionLink("Portfolio", "index", "home", null, null, "portfolio", null, htmlAttributes: new { @class = "page-scroll" })*@
 
                     </li>
                     <li>
                         <a class="page-scroll" href="#resume">Resume</a>
-                        @*@Html.ActionLink("Resume", "index", "home", null, null, "resume", null, null)*@
                     </li>
                     <li>
                         <a class="page-scroll" href="@Url.Action("index", "BlogPosts")">Blog</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#contact">Contact</a>
-                        @*@Html.ActionLink("Contact", "index", "home", null, null, "contact", null, null)*@
+                        <a href="https://www.linkedin.com/in/peter-harvey-39b1135a"><i class="fa fa-linkedin-square"></i></a>
                     </li>
                 </ul>
-                @Html.Partial("_LoginPartial")
+               
             </div>
             <!-- /.navbar-collapse -->
         </div>
@@ -96,12 +86,12 @@
         <div class="container">
             <div class="intro-text">
                 <div id="harvey">Pete Harvey</div>
-                <div class="intro-lead-in">Web Developer</div>
+                <div class="intro-lead-in">.Net Developer</div>
             </div>
         </div>
     </header>
     <!--ABOUT Section-->
-    <section id="about">
+    @*<section id="about">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
@@ -112,7 +102,7 @@
 
         </div>
 
-    </section>
+    </section>*@
     <!-- Portfolio Grid Section -->
     <section id="portfolio" class="bg-light-gray">
         <div class="container">
@@ -138,9 +128,11 @@
                     </a>
                     <div class="portfolio-caption">
                         <h4>JavaScript Exercises</h4>
-                        <p class="text-muted">Week One</p>
+                        <p class="text-muted">.   .   .</p>
                     </div>
                 </div>
+
+
                 <div class="col-md-4 col-sm-6 portfolio-item">
                     <a href="#portfolioModal2" class="portfolio-link" data-toggle="modal">
                         <div class="portfolio-hover">
@@ -148,293 +140,77 @@
                                 <i class="fa fa-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="~/img/portfolio/startup-framework.png" class="img-responsive" alt="">
+                        <img src="~/img/BT.png" class="img-responsive" alt="" />
+                        @*<img src="~/img/portfolio/startup-framework.png" class="img-responsive" alt="">*@
                     </a>
                     <div class="portfolio-caption">
-                        <h4>Startup Framework</h4>
-                        <p class="text-muted">Website Design</p>
+                        <h4>Bug Tracker</h4>
+                        <p class="text-muted">.   .   .</p>
                     </div>
                 </div>
-                <div class="col-md-4 col-sm-6 portfolio-item">
+               
+                
+                 <div class="col-md-4 col-sm-6 portfolio-item">
                     <a href="#portfolioModal3" class="portfolio-link" data-toggle="modal">
                         <div class="portfolio-hover">
                             <div class="portfolio-hover-content">
                                 <i class="fa fa-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="~/img/portfolio/treehouse.png" class="img-responsive" alt="">
+                        <img src="~/img/moneyinjarsbudget.jpg" class="img-responsive" alt="">
+                        @*<img src="~/img/portfolio/treehouse.png" class="img-responsive" alt="">*@
                     </a>
                     <div class="portfolio-caption">
-                        <h4>Treehouse</h4>
-                        <p class="text-muted">Website Design</p>
+                        <h4>$MART HOU$EHOLD</h4>
+                        <p class="text-muted">.   .   .</p>
                     </div>
-                </div>
-                <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a href="#portfolioModal4" class="portfolio-link" data-toggle="modal">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <i class="fa fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="~/img/portfolio/golden.png" class="img-responsive" alt="">
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>Golden</h4>
-                        <p class="text-muted">Website Design</p>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a href="#portfolioModal5" class="portfolio-link" data-toggle="modal">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <i class="fa fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="~/img/portfolio/escape.png" class="img-responsive" alt="">
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>Escape</h4>
-                        <p class="text-muted">Website Design</p>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a href="#portfolioModal6" class="portfolio-link" data-toggle="modal">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <i class="fa fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="~/img/portfolio/dreams.png" class="img-responsive" alt="">
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>Dreams</h4>
-                        <p class="text-muted">Website Design</p>
-                    </div>
-                </div>
+             
             </div>
         </div>
     </section>
 
     <!-- RESUME SECTION -->
     <section id="resume">
+      
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Resume</h2>
-                    <br />
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <ul class="timeline">
-                        <li>
-                            <div class="timeline-image">
-                                <img class="img-circle img-responsive" src="~/img/pslogo.png" />
-                            </div>
-                            <div class="timeline-panel">
-                                <div class="timeline-heading">
-                                    <h4>Park Sterling Bank ~ Charlotte, NC</h4>
-                                    <h4>January 2014 - June 2016</h4>
-                                    <h4 class="subheading">Loan Portfolio Analyst</h4>
-                                </div>
-                                <div class="timeline-body">
-                                    <p class="text-muted">• Develop monthly risk management reporting material used by the Director of Builder Finance to measure performance with respect to soundness, profitability and growth.</p>
-                                    <p class="text-muted">• Create Quarterly Builder Finance Group (BFG) reporting material presented to Senior Management personnel.</p>
-                                    <p class="text-muted">• Oversee Builder Finance line usage and compliance with approved terms.</p>
-                                    <p class="text-muted">• Monitor all loan performance for meeting development deadlines and minimum payment activity.</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="timeline-inverted">
-                            <div class="timeline-image">
-                                <img class="img-circle img-responsive" src="~/img/wflogo.jpg" />
-                            </div>
-                            <div class="timeline-panel">
-                                <div class="timeline-heading">
-                                    <h4>Wells Fargo - Charlotte, NC</h4>
-                                    <h4>February 2013 - January 2014</h4>
-                                    <h4 class="subheading">Loan Underwriter III</h4>
-                                </div>
-                                <div class="timeline-body">
-                                    <p class="text-muted">• Act as point of contact for non-decision making partners to gather information, make appropriate lending decisions and explain rationale behind credit decision.</p>
-                                    <p class="text-muted">• Responsible for reviewing, analyzing, approving and underwriting large, unusual or complex individual consumer requests and products within company and industry guidelines.</p>
-                                    <p class="text-muted">• Underwriting functions may include reviewing financial statements, credit reports, tax returns, income statements, cash-flow, collateral appraisal and applicable ratios (i.e. Debt ratios, loan-to-value).</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="timeline-image">
-                                <img class="img-circle img-responsive" src='~/img/btlogo.png'>
-                            </div>
-                            <div class="timeline-panel">
-                                <div class="timeline-heading">
-                                    <h4>BlueTarp Financial, Inc. - Charlotte, NC & Portland, ME</h4>
-                                    <h4>November 2009 - February 2013</h4>
-                                    <h4 class="subheading">Senior Commercial Credit Analyst II</h4>
-                                </div>
-                                <div class="timeline-body">
-                                    <p class="text-muted">• Underwrite new credit applications and existing customer accounts to determine credit worthiness, appropriate credit line, and payment terms based on internal credit underwriting policies and government standards.</p>
-                                    <p class="text-muted">• Gather and assess relevant information about customer’s business and credit history, including consumer and commercial credit reports, bank and vendor references, financial statements, tax returns, statements of cash-flow and balance sheets.</p>
-                                    <p class="text-muted">• Complete thorough write-up analysis of larger more complex credit extensions.</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="timeline-inverted">
-                            <div class="timeline-image">
-                                <img class="img-circle img-responsive" src='~/img/boalogo.png'>
-                            </div>
-                            <div class="timeline-panel">
-                                <div class="timeline-heading">
-                                    <h4>Bank of America - Belfast, ME</h4>
-                                    <h4>February 1999 - November 2009</h4>
-                                    <h4 class="subheading">Senior Credit Analyst II</h4>
-                                </div>
-                                <div class="timeline-body">
-                                    <p class="text-muted">• Underwrite consumer loans based on escalated requests and strategy generated risk detection reviews; evaluated credit bureaus, account history, and customer provided information to reach determination regarding customer relationship with the bank; proactively contacted customers regarding financial stability commitments and to assess potential account risks; provided credit solutions and counseling to customers experiencing financial hardship.</p>
-                                    <p class="text-muted">• Underwrite credit card applications, credit reports, tax documents and bank references to determine or adjust customer credit lines; determined applicant’s credit worthiness based on ability and willingness to repay; generated revenue through transfer transactions and additional bank product sales.</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="timeline-inverted">
-                            <div class="timeline-image">
-                                <h4>
+                    @*<h2 class="section-heading">Resume</h2>*@
+                    <h2>
+                        <a href="~/img/Peter Harvey resume 10.1.16.pdf">Click here for a PDF file of Pete Harvey's resume.</a>
+                        <a href="~/img/Peter Harvey resume 10.1.16.pdf">
+                            <img class="img-responsive img-centered" src="~/img/resumePage1.png" alt="">
+                            <img class="img-responsive img-centered" src="~/img/resumePage2.png" alt="">
+                        </a>
 
-                                    <br>
-                                    <br>
-                                </h4>
-                            </div>
-                        </li>
-                    </ul>
+                    </h2>
+
+
                 </div>
             </div>
         </div>
-    </section>
-    <!-- BLOG SECTION -->
-    <section id="blog" class="bg-light-gray">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Pleace Holder for Pete's Blog</h2>
-                    <h3 class="section-subheading text-muted">Come Back Soon.</h3>
-                </div>
-            </div>
+        </section>
 
-        </div>
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 text-center">
-                <p class="large text-muted"></p>
-            </div>
-        </div>
-
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Contact Pete</h2>
-                    <h3 class="section-subheading text-muted"></h3>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <form name="sentMessage" id="contactForm" novalidate>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Your Name *" id="name" required data-validation-required-message="Please enter your name.">
-                                    <p class="help-block text-danger"></p>
-                                </div>
-                                <div class="form-group">
-                                    <input type="email" class="form-control" placeholder="Your Email *" id="email" required data-validation-required-message="Please enter your email address.">
-                                    <p class="help-block text-danger"></p>
-                                </div>
-                                <div class="form-group">
-                                    <input type="tel" class="form-control" placeholder="Your Phone *" id="phone" required data-validation-required-message="Please enter your phone number.">
-                                    <p class="help-block text-danger"></p>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <textarea class="form-control" placeholder="Your Message *" id="message" required data-validation-required-message="Please enter a message."></textarea>
-                                    <p class="help-block text-danger"></p>
-                                </div>
-                            </div>
-                            <div class="clearfix"></div>
-                            <div class="col-lg-12 text-center">
-                                <div id="success"></div>
-                                <button type="submit" class="btn btn-xl">Send Message</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
+          
     <footer>
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
-                    <span class="copyright">Copyright &copy; Your Website 2016</span>
+                    <span class="copyright">Copyright &copy; Developed by Pete Harvey</span>
                 </div>
                 <div class="col-md-4">
                     <ul class="list-inline social-buttons">
+                     
                         <li>
-                            <a href="#"><i class="fa fa-twitter"></i></a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-facebook"></i></a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-linkedin"></i></a>
+                            <a href="https://www.linkedin.com/in/peter-harvey-39b1135a"><i class="fa fa-linkedin-square"></i></a>
                         </li>
                     </ul>
                 </div>
-                <div class="col-md-4">
-                    <ul class="list-inline quicklinks">
-                        <li>
-                            <a href="#">Privacy Policy</a>
-                        </li>
-                        <li>
-                            <a href="#">Terms of Use</a>
-                        </li>
-                    </ul>
-                </div>
+             
             </div>
         </div>
     </footer>
-    <!-- Portfolio Modals -->
-    <!-- Use the modals below to showcase details about your portfolio projects! -->
-    <!-- Portfolio Modal 1 -->
-    @*<div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl">
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <div class="modal-body">*@
-    <!-- Project Details Go Here -->
-    @*<h2>Project Name</h2>
-                                <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                                <img class="img-responsive img-centered" src="~/img/portfolio/roundicons-free.png" alt="">
-                                <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                                <p>
-                                    <strong>Want these icons in this portfolio item sample?</strong>You can download 60 of them for free, courtesy of <a href="https://getdpd.com/cart/hoplink/18076?referrer=bvbo4kax5k8ogc">RoundIcons.com</a>, or you can purchase the 1500 icon set <a href="https://getdpd.com/cart/hoplink/18076?referrer=bvbo4kax5k8ogc">here</a>.
-                                </p>
-
-                                <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>*@
+   
     <div class="modal fade" id="petesCode" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -589,7 +365,7 @@ fbOutput= $("#fbResult").append("The result is ");
             fbOutput = $("#fbResult").append('<span style="color: green; font-weight: bold">Buzz</span>');
         }
         else {
-            fbOutput = $("#fbResult").append('<span style="font-weight: bold">', i);
+            fbOutput = $("#fbResult").append('<span style="font-weight: bold">', i</span>);
         }
     }
 });
@@ -613,8 +389,7 @@ function runPalindrome(word) {
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
                 </div>
             </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
@@ -632,12 +407,13 @@ function runPalindrome(word) {
                 <div class="row">
                     <div class="col-lg-8 col-lg-offset-2">
                         <div class="modal-body">
-                            <h2>Project Heading</h2>
-                            <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                            <img class="img-responsive img-centered" src="~/img/portfolio/startup-framework-preview.png" alt="">
-                            <p><a href="http://designmodo.com/startup/?u=787">Startup Framework</a> is a website builder for professionals. Startup Framework contains components and complex blocks (PSD+HTML Bootstrap themes and templates) which can easily be integrated into almost any design. All of these components are made in the same style, and can easily be integrated into projects, allowing you to create hundreds of solutions for your future projects.</p>
-                            <p>You can preview Startup Framework <a href="http://designmodo.com/startup/?u=787">here</a>.</p>
-                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
+                            <h2>Bug Tracker</h2>
+                            <p class="item-intro text-muted">Bug Tracker is an internal workflow application designed to manage a companies hardware, software and network challanges based on a ticket system.</p>
+                            <a href="http://pharveybugtracker.azurewebsites.net/">
+                            <img class="img-responsive img-centered" src="~/img/BugTracker by Pete Harvey.png" alt=""></a>
+                            <p><a href="http://pharveybugtracker.azurewebsites.net/">Bug Tracker</a> was developed using the Model-View-Controller (MVC) pattern, which renders stored data specific to the user's actions within the application. Developer tools include Microsoft Visual Studio 2015, ASP.NET, C#, Linq, SQL, BootStrap, Javascript, and CSS.</p>
+                            <p>You can preview Bug Tracker <a href="http://pharveybugtracker.azurewebsites.net/">here</a>.</p>
+                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
                         </div>
                     </div>
                 </div>
@@ -658,12 +434,15 @@ function runPalindrome(word) {
                     <div class="col-lg-8 col-lg-offset-2">
                         <div class="modal-body">
                             <!-- Project Details Go Here -->
-                            <h2>Project Name</h2>
-                            <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                            <img class="img-responsive img-centered" src="~/img/portfolio/treehouse-preview.png" alt="">
-                            <p>Treehouse is a free PSD web template built by <a href="https://www.behance.net/MathavanJaya">Mathavan Jaya</a>. This is bright and spacious design perfect for people or startup companies looking to showcase their apps or other projects.</p>
-                            <p>You can download the PSD template in this portfolio sample item at <a href="http://freebiesxpress.com/gallery/treehouse-free-psd-web-template/">FreebiesXpress.com</a>.</p>
-                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
+                            <h2>$MART HOU$EHOLD</h2>
+                            @*<p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>*@
+                            <a href="http://pharvey-financialportal.azurewebsites.net/">
+                                <img class="img-responsive img-centered" src="~/img/welcome.png" alt="">
+                            </a>
+                           
+                            @*<p>Treehouse is a free PSD web template built by <a href="https://www.behance.net/MathavanJaya">Mathavan Jaya</a>. This is bright and spacious design perfect for people or startup companies looking to showcase their apps or other projects.</p>
+                            <p>You can download the PSD template in this portfolio sample item at <a href="http://freebiesxpress.com/gallery/treehouse-free-psd-web-template/">FreebiesXpress.com</a>.</p>*@
+                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
                         </div>
                     </div>
                 </div>
@@ -748,13 +527,13 @@ function runPalindrome(word) {
             </div>
         </div>
     </div>
-    <div class="container body-content">
+    @*<div class="container body-content">
 
         <hr />
         <footer>
             <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
         </footer>
-    </div>
+    </div>*@
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")

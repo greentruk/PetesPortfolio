@@ -79,8 +79,14 @@
 \\mac\home\documents\visual studio 2015\Projects\PetesPortfolio\PetesPortfolio\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 \\mac\home\documents\visual studio 2015\Projects\PetesPortfolio\PetesPortfolio\obj\Debug\PetesPortfolio.dll
 \\mac\home\documents\visual studio 2015\Projects\PetesPortfolio\PetesPortfolio\obj\Debug\PetesPortfolio.pdb
-\\mac\home\documents\visual studio 2015\Projects\PetesPortfolio\PetesPortfolio\obj\Debug\PetesPortfolio.csprojResolveAssemblyReference.cache
 \\mac\home\documents\visual studio 2015\Projects\PetesPortfolio\PetesPortfolio\bin\PagedList.dll
 \\mac\home\documents\visual studio 2015\Projects\PetesPortfolio\PetesPortfolio\bin\PagedList.Mvc.dll
 \\mac\home\documents\visual studio 2015\Projects\PetesPortfolio\PetesPortfolio\bin\PagedList.xml
 \\mac\home\documents\visual studio 2015\Projects\PetesPortfolio\PetesPortfolio\bin\PagedList.Mvc.xml
+\\mac\home\documents\visual studio 2015\Projects\PetesPortfolio\PetesPortfolio\bin\SendGrid.CSharp.HTTP.Client.dll
+\\mac\home\documents\visual studio 2015\Projects\PetesPortfolio\PetesPortfolio\bin\SendGrid.dll
+\\mac\home\documents\visual studio 2015\Projects\PetesPortfolio\PetesPortfolio\bin\SendGrid.SmtpApi.dll
+\\mac\home\documents\visual studio 2015\Projects\PetesPortfolio\PetesPortfolio\bin\SendGridMail.dll
+\\mac\home\documents\visual studio 2015\Projects\PetesPortfolio\PetesPortfolio\bin\System.Net.Http.Formatting.dll
+\\mac\home\documents\visual studio 2015\Projects\PetesPortfolio\PetesPortfolio\bin\System.Net.Http.Formatting.xml
+\\Mac\Home\Documents\Visual Studio 2015\Projects\PetesPortfolio\PetesPortfolio\obj\Debug\PetesPortfolio.csprojResolveAssemblyReference.cache

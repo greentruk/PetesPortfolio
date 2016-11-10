@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="favicon.ico">
-    <title>Agency - Start Bootstrap Theme</title>
+    <title>Pete Harvey - Portfolio</title>
     <!-- Bootstrap core CSS -->
     @*<link href="css/bootstrap.min.css" rel="stylesheet">*@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
@@ -61,10 +61,9 @@
                     @*<li>
                         <a class="page-scroll" href="#about">About</a>
                     </li>*@
-                    <li>
-                        
-                        @Html.ActionLink("About", "index", "home", null, null, "about", null, null)
-                    </li>
+                    @Html.Partial("_LoginPartial")
+
+
                     <li>
                         @*<a class="page-scroll" href="#portfolio">Portfolio</a>*@
                         @*@Html.ActionLink("Portfolio", "index", "home", null, null, "portfolio", null, null)*@
@@ -79,11 +78,9 @@
                         <a class="page-scroll" href="@Url.Action("index", "BlogPosts")">Blog</a>
                     </li>
                     <li>
-                        @*<a class="page-scroll" href="#contact">Contact</a>*@
-                        @Html.ActionLink("Contact", "index", "home", null, null, "contact", null, null)
+                        <a href="https://www.linkedin.com/in/peter-harvey-39b1135a"><i class="fa fa-linkedin-square"></i></a>
                     </li>
                 </ul>
-                @Html.Partial("_LoginPartial")
             </div>
             <!-- /.navbar-collapse -->
         </div>
@@ -95,9 +92,9 @@
     <div class="container body-content">
        
         <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
+        @*<footer>
+            <p>&copy; @DateTime.Now.Year - Developer by Pete Harvey</p>
+        </footer>*@
     </div>
 
     @Scripts.Render("~/bundles/jquery")

@@ -41,8 +41,8 @@ namespace PetesPortfolio.Controllers
                 return View(db.Posts.OrderByDescending(p => p.Created).ToPagedList(pageNumber, pageSize));
             else
                 return View(result.OrderBy(p => p.Created).ToPagedList(pageNumber, pageSize));
-         }
-  
+        }
+
         // GET: BlogPosts/Details/5
         public ActionResult Details(string Slug)
         {
@@ -70,7 +70,7 @@ namespace PetesPortfolio.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Title,Slug,Body,MediaURL,Pulbished")] BlogPost blogPost, HttpPostedFileBase image)
+        public ActionResult Create([Bind(Include = "Id,Title,Slug,Body,MediaURL,Published")] BlogPost blogPost, HttpPostedFileBase image)
         {
             if (image != null && image.ContentLength > 0)
             {
@@ -139,7 +139,7 @@ namespace PetesPortfolio.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Created,Updated,Title,Slug,Body,MediaURL,Pulbished")] BlogPost blogPost, HttpPostedFileBase image)
+        public ActionResult Edit([Bind(Include = "Id,Created,Title,Slug,Body,MediaURL,Pulbished")] BlogPost blogPost, HttpPostedFileBase image)
         {
             if (image != null && image.ContentLength > 0)
             {
@@ -163,7 +163,7 @@ namespace PetesPortfolio.Controllers
                 }
                     db.Posts.Attach(blogPost);
                     db.Entry(blogPost).State = EntityState.Modified;
-
+                    blogPost.Updated = DateTimeOffset.Now;
                     db.SaveChanges();
                     return RedirectToAction("Index");
                 }

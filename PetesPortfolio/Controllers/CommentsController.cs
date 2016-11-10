@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using PetesPortfolio.Models;
 using PetesPortfolio.Models.codeFirst;
+using Microsoft.AspNet.Identity;
 
 namespace PetesPortfolio.Controllers
 {
@@ -52,11 +53,11 @@ namespace PetesPortfolio.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,PostId,AuthorId,Body,Created,Updated,UpdateReason")] Comment comment)
+        public ActionResult Create([Bind(Include = "Id,PostId,Body,Created,Updated,UpdateReason")] Comment comment)
         {
             if (ModelState.IsValid)
             {
-                
+                comment.AuthorId = User.Identity.GetUserId ();
                 comment.Created = DateTimeOffset.Now;
                 db.Comments.Add(comment);
                 db.SaveChanges();
